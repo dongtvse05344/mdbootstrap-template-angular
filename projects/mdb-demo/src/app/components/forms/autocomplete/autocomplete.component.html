@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Autocomplete</h2>
+    </div>
+  </div>
+
+  <!-- Basic Example -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <h4 class="text-center">Basic Example</h4>
+      <mdb-autocomplete [label]="'Select color'" initialValue="Select color" name="autocomplete" [(ngModel)]="searchStr" [datasource]="dataService"
+        [minSearchLength]="0">
+      </mdb-autocomplete>
+    </div>
+  </div>
+  <!-- Basic Example -->
+
+  <hr class="my-5">
+
+  <!-- NgModel value -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">NgModel value</h4>
+      <mdb-autocomplete [label]="'Select color'" name="autocomplete" initialValue="'Select color'" [(ngModel)]="ngModelSearchStr"
+        [datasource]="ngModelDataService" [minSearchLength]="0">
+      </mdb-autocomplete>
+      <p class="text-center">Selected value: {{ngModelSearchStr}}</p>
+    </div>
+  </div>
+  <!-- NgModel value -->
+
+  <hr class="my-5">
+
+  <!-- Initial value -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Initial value</h4>
+      <mdb-autocomplete [label]="'Select color'" name="autocomplete" initialValue="'Select color'" [(ngModel)]="initialValueSearchStr"
+        [datasource]="initialValueDataService" [minSearchLength]="0">
+      </mdb-autocomplete>
+    </div>
+  </div>
+  <!-- Initial value -->
+
+  <hr class="my-5">
+
+  <!-- inputClass example -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">inputClass example</h4>
+      <mdb-autocomplete [label]="'Select color'" name="autocomplete" [inputClass]="'red-text'" initialValue="'Select color'" [(ngModel)]="inputClassSearchStr"
+        [datasource]="inputClassDataService" [minSearchLength]="0">
+      </mdb-autocomplete>
+    </div>
+  </div>
+  <!-- inputClass example -->
+
+  <hr class="my-5">
+
+  <!-- Remote data -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mb-5">
+      <h4 class="text-center">Remote data</h4>
+      <mdb-autocomplete [label]="'Select country'" name="autocomplete" initialValue="'Select country'" [(ngModel)]="remoteDataSearchStr"
+        [dataService]="dataRemote" [minSearchLength]="0">
+      </mdb-autocomplete>
+    </div>
+  </div>
+  <!-- Remote data -->
+</div>

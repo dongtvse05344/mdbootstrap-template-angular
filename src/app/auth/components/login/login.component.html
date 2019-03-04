@@ -1,0 +1,66 @@
+<div class="container-fluid " style="background: url(assets/images/bg.jpg);
+background-size: cover; height: 100vh;">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Wellcome to HiEIS</h2>
+    </div>
+  </div>
+  <!-- Simple form -->
+  <div class="row animated  bounceIn">
+    <div class="col-md-6 mx-auto">
+      <section class="form-simple">
+
+        <!--Form with header-->
+        <mdb-card>
+
+          <!--Header-->
+          <div class="header pt-3 grey lighten-2">
+
+            <div class="row d-flex justify-content-start">
+              <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Log in</h3>
+              <p class="text-danger">{{loginFailed}}</p>
+
+            </div>
+          </div>
+          <!--Header-->
+
+          <mdb-card-body class="mx-4 mt-4">
+
+            <!--Body-->
+            <form [formGroup]="simpleForm">
+
+
+              <div class="md-form">
+                <input [(ngModel)]="model.username" type="text" id="simpleFormEmailEx" class="form-control"
+                  formControlName="simpleFormEmailEx" mdbInputDirective>
+                <label for="simpleFormEmailEx">Your Username</label>
+              </div>
+
+              <div class="md-form pb-3">
+                <input [(ngModel)]="model.password" type="password" id="simpleFormPasswordEx" class="form-control"
+                  formControlName="simpleFormPasswordEx" mdbInputDirective>
+                <label for="simpleFormPasswordEx">Your password</label>
+                <p class="font-small grey-text d-flex justify-content-end">Forgot
+                  <a href="#" class="dark-grey-text font-weight-bold ml-1"> Password?</a>
+                </p>
+              </div>
+            </form>
+
+            <div class="text-center mb-4">
+              <button (click)="Login()" type="button" mdbBtn color="danger" block="true" class="z-depth-2"
+                mdbWavesEffect>Log in</button>
+            </div>
+            <p class="font-small grey-text d-flex justify-content-center">Don't have an account?
+              <a href="#" class="dark-grey-text font-weight-bold ml-1"> Sign up</a>
+            </p>
+
+          </mdb-card-body>
+
+        </mdb-card>
+        <!--/Form with header-->
+
+      </section>
+    </div>
+  </div>
+  <!-- Simple form -->
+</div>

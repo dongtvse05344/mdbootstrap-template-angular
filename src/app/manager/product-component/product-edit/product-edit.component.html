@@ -1,0 +1,47 @@
+<div class="container mt-5 animated bounceIn">
+  <div class="row">
+    <div class="col-md-6 text-center mx-auto">
+      <h3 class="title">Sửa Sản phẩm</h3>
+    </div>
+    <div class="col-md-8 mx-auto ">
+      <form *ngIf="form" [formGroup]="form" (submit)="update()">
+        <div class="md-form mt-5 form-group">
+          <i class="fa fa-plus-square-o prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="Name">
+          <label for="form2">Tên </label>
+        </div>
+
+        <div class="md-form mt-5 form-group">
+          <i class="fa fa-code prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="Code">
+          <label for="form2">Code </label>
+        </div>
+        <div class="md-form mt-5 form-group">
+          <i class="fa fa-chain-broken  prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="Unit">
+          <label for="form2">Đơn vị </label>
+        </div>
+        <div class="md-form mt-5 form-group">
+          <i class="fa fa-money  prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="UnitPrice"
+          [textMask]="{mask: numberMask}"
+          >
+          <label for="form2">Đơn giá </label>
+        </div>
+        <div class="mx-auto">
+          <h6 class="text-center">Thuế suất :</h6>
+          <mdb-select [options]="optionsSelect" formControlName="VATRate" 
+            customClass="filled-in" placeholder="Choose your option"></mdb-select>
+        </div>
+
+        <div class="mx-auto text-center mt-3">
+          <button mdbBtn gradient="blue" rounded="true" class="waves-light" mdbWavesEffect>Sửa sản phẩm</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+<swal #errorSwal title="Lỗi" text="Vui lòng kiểm tra lại dữ liệu" type="warning">
+</swal>

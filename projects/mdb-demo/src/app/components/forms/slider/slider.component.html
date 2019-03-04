@@ -1,0 +1,198 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Slider</h2>
+    </div>
+  </div>
+
+  <!-- Basic slider -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <h4 class="text-center">Basic slider</h4>
+      <form class="range-field mt-5">
+        <div class="track">
+          <div #rangeCloud class="range-cloud" title="range" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+            <span class="text-transform">{{range}}</span>
+          </div>
+        </div>
+        <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="range"
+          (change)="coverage()">
+      </form>
+    </div>
+  </div>
+  <!-- Basic slider -->
+  <hr class="my-5">
+
+  <!-- Slider with price counter -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Slider with price counter</h4>
+      <mdb-card>
+        <mdb-card-body>
+
+          <h3 class="text-center font-weight-bold blue-text mt-3 mb-4 pb-4">
+            <strong>Slide to see the pricing change</strong>
+          </h3>
+          <hr>
+
+          <form class="range-field mt-5">
+            <div class="track">
+              <div #cardRangeCloud class="range-cloud" title="range" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+                <span class="text-transform">{{cardRange}}</span>
+              </div>
+            </div>
+            <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="cardRange"
+              (change)="cardCoverage()">
+          </form>
+
+          <!-- Grid row -->
+          <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-6 text-center pb-5">
+
+              <h2>
+                <span class="badge blue lighten-2 mb-4">You earn</span>
+              </h2>
+              <h2 class="display-4" style="color:#0d47a1">
+                <strong id="resellerEarnings">{{ cardRange }} $</strong>
+              </h2>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-6 text-center pb-5">
+
+              <h2>
+                <span class="badge blue lighten-2 mb-4">Client pays</span>
+              </h2>
+              <h2 class="display-4" style="color:#0d47a1">
+                <strong id="clientPrice">{{319 + cardRange}} $</strong>
+              </h2>
+
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          <!-- Grid row -->
+
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+  <!-- Slider with price counter -->
+  <hr class="my-5">
+
+  <!-- Slider with different width -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Slider with different width</h4>
+      <form class="range-field mt-5 w-25">
+        <div class="track">
+          <div #quarterRangeCloud class="range-cloud" title="quarterRangeCloud" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+            <span class="text-transform">{{quarterRange}}</span>
+          </div>
+        </div>
+        <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="quarterRange"
+          (change)="quarterCoverage()">
+      </form>
+
+      <form class="range-field mt-5 w-50">
+        <div class="track">
+          <div #halfRangeCloud class="range-cloud" title="halfRangeCloud" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+            <span class="text-transform">{{halfRange}}</span>
+          </div>
+        </div>
+        <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="halfRange"
+          (change)="halfCoverage()">
+      </form>
+
+      <form class="range-field mt-5 w-75">
+        <div class="track">
+          <div #thirdRangeCloud class="range-cloud" title="thirdRangeCloud" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+            <span class="text-transform">{{thirdRange}}</span>
+          </div>
+        </div>
+        <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="thirdRange"
+          (change)="thirdCoverage()">
+      </form>
+
+      <form class="range-field mt-5 w-100">
+        <div class="track">
+          <div #fullRangeCloud class="range-cloud" title="fullRangeCloud" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+            <span class="text-transform">{{fullRange}}</span>
+          </div>
+        </div>
+        <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="fullRange"
+          (change)="fullCoverage()">
+      </form>
+    </div>
+  </div>
+  <!-- Slider with different width -->
+  <hr class="my-5">
+
+  <!-- Slider with first and last value -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mb-5">
+      <h4 class="text-center">Slider with first and last value</h4>
+      <mdb-card class="indigo lighten-5">
+        <mdb-card-body>
+
+          <div class="d-flex justify-content-center my-4">
+            <span class="font-weight-bold indigo-text mr-2">{{min}}</span>
+            <form class="range-field mt-5 w-25">
+              <div class="track">
+                <div #rangeCloud class="range-cloud" title="range" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+                  <span class="text-transform">{{range}}</span>
+                </div>
+              </div>
+              <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="range"
+                (change)="coverage()">
+            </form>
+            <span class="font-weight-bold indigo-text ml-2">{{max}}</span>
+          </div>
+
+          <div class="d-flex justify-content-center my-4">
+            <span class="font-weight-bold blue-text mr-2">{{min}}</span>
+            <form class="range-field mt-5 w-50">
+              <div class="track">
+                <div #rangeCloud class="range-cloud" title="range" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+                  <span class="text-transform">{{range}}</span>
+                </div>
+              </div>
+              <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="range"
+                (change)="coverage()">
+            </form>
+            <span class="font-weight-bold blue-text ml-2">{{max}}</span>
+          </div>
+
+          <div class="d-flex justify-content-center my-4">
+            <span class="font-weight-bold purple-text mr-2">{{min}}</span>
+            <form class="range-field mt-5 w-75">
+              <div class="track">
+                <div #rangeCloud class="range-cloud" title="range" [ngClass]="{'visible': this.visibility, 'hidden': !this.visibility}">
+
+                  <span class="text-transform">{{range}}</span>
+                </div>
+              </div>
+              <input #input name="range" type="range" min="0" max="100" (focus)="visibility = true" (blur)="visibility = false" [(ngModel)]="range"
+                (change)="coverage()">
+            </form>
+            <span class="font-weight-bold purple-text ml-2">{{max}}</span>
+          </div>
+
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+  <!-- Slider with first and last value -->
+</div>

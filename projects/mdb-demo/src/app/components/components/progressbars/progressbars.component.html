@@ -1,0 +1,126 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Progress Bar</h2>
+    </div>
+  </div>
+
+  <!-- Basic Example -->
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h4 class="text-center">Basic Example</h4>
+      <mdb-progress value="0" min="0" max="100" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="25" min="0" max="100" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="50" min="0" max="100" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="75" min="0" max="100" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="100" min="0" max="100" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+    </div>
+  </div>
+  <!-- Basic Example -->
+
+  <hr class="my-5">
+
+  <!-- Contextual alternatives -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Contextual alternatives</h4>
+      <mdb-progress value="25" min="0" max="100" type="success" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="50" min="0" max="100" type="info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="75" min="0" max="100" type="warning" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+      <mdb-progress value="100" min="0" max="100" type="danger" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+    </div>
+  </div>
+  <!-- Contextual alternatives -->
+
+  <hr class="my-5">
+
+  <!-- Modifying height and adding text -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Modifying height and adding text</h4>
+      <mdb-progress class="colorful-alternative" value="25" min="0" max="100" type="success" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">Greeb</mdb-progress>
+      <mdb-progress class="colorful-alternative" value="50" min="0" max="100" type="info" aria-valuenow="50" aria-valuemin="0"
+        aria-valuemax="100">Blue</mdb-progress>
+      <mdb-progress class="colorful-alternative" value="75" min="0" max="100" type="warning" aria-valuenow="75" aria-valuemin="0"
+        aria-valuemax="100">Orange</mdb-progress>
+      <mdb-progress class="colorful-alternative" value="100" min="0" max="100" type="danger" aria-valuenow="100" aria-valuemin="0"
+        aria-valuemax="100">Red</mdb-progress>
+    </div>
+  </div>
+  <!-- Modifying height and adding text -->
+
+  <hr class="my-5">
+
+  <!-- Imitation of loading progress -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Imitation of loading progress</h4>
+      <mdb-progress class="colorful-alternative" [value]="value" min="0" max="100" type="success" aria-valuenow="0" aria-valuemin="0"
+        aria-valuemax="100">{{value}} %</mdb-progress>
+    </div>
+  </div>
+  <!-- Imitation of loading progress -->
+
+  <hr class="my-5">
+
+  <!-- Infinite loading -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Infinite loading</h4>
+      <mdb-progress-bar class="progress primary-color-dark" mode="indeterminate"></mdb-progress-bar>
+    </div>
+  </div>
+  <!-- Infinite loading -->
+
+  <hr class="my-5">
+
+  <!-- Circles -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Circles</h4>
+      <div class="d-flex flex-center">
+        <!--Big blue-->
+        <mdb-spinner class="mr-2" spinnerType="big" spinnerColor="blue"></mdb-spinner>
+
+        <!--Medium red-->
+        <mdb-spinner class="mr-2" spinnerColor="red"></mdb-spinner>
+
+        <!--Small yellow-->
+        <mdb-spinner spinnerType="small" spinnerColor="yellow"></mdb-spinner>
+      </div>
+    </div>
+  </div>
+  <!-- Circles -->
+  <hr class="my-5">
+
+  <!-- Crazy Circles -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Crazy Circles</h4>
+      <div class="d-flex flex-center">
+        <!--Big blue-->
+        <mdb-spinner class="mr-2" spinnerType="big crazy" spinnerColor="blue"></mdb-spinner>
+
+        <!--Medium red-->
+        <mdb-spinner class="mr-2" spinnerType="crazy" spinnerColor="red"></mdb-spinner>
+
+        <!--Small yellow-->
+        <mdb-spinner spinnerType="small crazy" spinnerColor="yellow"></mdb-spinner>
+      </div>
+    </div>
+  </div>
+  <!-- Crazy Circles -->
+  <hr class="my-5">
+
+  <!-- Multicolor -->
+  <div class="row">
+    <div class="col-md-12 mx-auto mb-5">
+      <h4 class="text-center">Multicolor</h4>
+      <div class="d-flex flex-center">
+        <mdb-spinner spinnerType="big"></mdb-spinner>
+      </div>
+    </div>
+  </div>
+  <!-- Multicolor -->
+</div>

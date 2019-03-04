@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <!--Right-->
+      <div class="md-form input-group">
+        <input type="search" class="form-control" placeholder="Mã Số Thuế..." [(ngModel)]="company.TaxNo">
+        <div class="input-group-btn">
+          <button mdbBtn color="primary" size="md" class="waves-light" (click)="getMST()" type="button" mdbWavesEffect>Lấy MST</button>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="md-form form-sm">
+          <i class="fa fa-building prefix"></i>
+
+          <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm" [(ngModel)]="company.Name">
+          <label for="form3" class="">Tên Công Ty</label>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="md-form form-sm">
+          <i class="fa fa-map-marker prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm" [(ngModel)]="company.Address">
+          <label for="form3" class="">Địa Chỉ</label>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:-20px;">
+        <div class="col-md-6">
+          <div class="mx-auto">
+            <div class="md-form form-group" style="margin-top:0px!important">
+              <i class="fa fa-envelope prefix"></i>
+              <input mdbInputDirective type="email" class="form-control" id="form19" name="email" [(ngModel)]="company.Email" >
+              <label for="form19">E-mail</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mx-auto">
+            <div class="md-form form-group"  style="margin-top:0px!important" >
+              <i class="fa fa-phone prefix"></i>
+              <input mdbInputDirective type="text" class="form-control" id="form18"  [(ngModel)]="company.Tel">
+              <label for="form18">Số Điện Thoại</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="md-form form-sm">
+          <i class="fa fa-globe prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm" [(ngModel)]="company.Website">
+          <label for="form3" class="">Website</label>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="md-form form-sm">
+          <i class="fa fa-fax prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm" [(ngModel)]="company.Fax">
+          <label for="form3" class="">Fax</label>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="md-form form-sm">
+          <i class="fa fa-bank prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm" [(ngModel)]="company.Bank">
+          <label for="form3" class="">Ngân Hàng</label>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <div class="md-form form-sm">
+          <i class="fa fa-forumbee prefix"></i>
+          <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm" [(ngModel)]="company.BankAcountNumber">
+          <label for="form3" class="">Tài Khoản Ngân Hàng</label>
+        </div>
+      </div>
+      <button _ngcontent-c22="" class="waves-light btn btn-cyan" color="cyan" mdbbtn="" mdbwaveseffect="" type="button"
+        ng-reflect-color="cyan">Tạo Doanh Nghiệp</button>
+    </div>
+  </div>
+</div>
+
+<swal
+    #addFail
+    title="Dữ liệu không phù hợp"
+    text="Vui lòng thử lại"
+    [showCancelButton]="false"
+    >
+</swal>
+<swal
+    #addSuccess
+    title="Đã thêm công ty <b>{{company.Name}}</b>"
+    text="Quay về trang chủ"
+    [showCancelButton]="false"
+    (confirm)="goHome()"
+    >
+</swal>

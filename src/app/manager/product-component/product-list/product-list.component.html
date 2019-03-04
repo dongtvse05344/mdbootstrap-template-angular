@@ -1,0 +1,106 @@
+<!--Third row-->
+<div class="row " style="margin-top:20px;">
+  <!--First column-->
+  <div class="col-md-3">
+    <div class="md-form">
+      <input mdbInputDirective type="text" id="form41" class="form-control" (keyup)="search()" [(ngModel)]="nameSearch">
+      <label for="form41" class="">Tên sản phẩm</label>
+    </div>
+  </div>
+
+  <!--Second column-->
+  <div class="col-md-3">
+    <div class="md-form">
+      <input mdbInputDirective type="text" id="form51" class="form-control" (keyup)="search()" [(ngModel)]="codeSearch">
+      <label for="form51" class="">Mã sản phẩm</label>
+    </div>
+  </div>
+
+</div>
+<!--/.Third row-->
+<!-- Basic example -->
+<div class="row">
+  <div class="col-md-12 mx-auto mt-2">
+    <div class="card card-cascade narrower mt-2">
+      <!--Card image-->
+      <div class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
+
+        <h4 class="white-text font-weight-bold text-uppercase mb-0">Danh sách sản phẩm</h4>
+
+      </div>
+      <!--/Card image-->
+
+      <div class="px-4">
+        <div class="row table-button-group">
+          <div class="col-md-6 left">
+            <nav aria-label="...">
+              <ul class="pagination">
+                <li *ngFor="let i of pageSizeNumbers" class="page-item" [class.active]="pageSize==i" (click)="setPageSize(i)"><a
+                    class="page-link">{{i}}</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-6 right text-right">
+            <button routerLink="create" _ngcontent-c22="" color="default" mdbbtn="" mdbwaveseffect="" outline="true" type="button" class="btn btn-outline-default"
+              ng-reflect-color="default" ng-reflect-outline="true">
+              <i class="fa fa-plus"></i>Thêm mới sản phẩm</button>
+          </div>
+        </div>
+        <table class="table table-hover table-responsive-md mb-0 animated bounceInUp">
+          <thead>
+            <tr class="">
+              <th class="th-lg">Tên Sản Phẩm</th>
+              <th class="th-lg">Mã SP</th>
+              <th class="th-lg">Đơn vị</th>
+              <th class="th-lg">Đơn giá</th>
+              <th class="th-lg">Thuế suất</th>
+              <th class="th-lg text-center" colspan="2" style="width:10%">Thao Tác</th>
+
+            </tr>
+        </thead>
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor="let item of data.List">
+              <td [routerLink]="['edit',item.Id]"><b>{{item.Name}}</b><br /></td>
+              <td>{{item.Code}}</td>
+              <td>{{item.Unit}}</td>
+              <td>{{item.UnitPrice | number }} VND</td>
+              <td>{{item.VATRate}} %</td>
+              <td class="text-center">
+                <button class="btn-md" [routerLink]="[item.Id, 'edit']" mdbBtn type="button" color="info" rounded="true"
+                  outline="true" mdbWavesEffect>
+                  <i class="fa fa-pencil"></i>
+                </button>
+              </td>
+              <td>
+                <button class="btn-md" 
+                  [swal]="{ title: 'Xóa sản phẩm', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"
+                  (confirm)="delete(item)"
+                   mdbTooltip="Xóa" mdbBtn type="button" color="primary" rounded="true" outline="true"
+                  mdbWavesEffect>
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+      </div>
+      <hr class="my-0">
+      <!--Bottom Table UI-->
+      <div class="d-flex justify-content-center">
+        <!--Pagination -->
+        <nav class="my-4 pt-2">
+          <ul class="pagination pagination-circle pg-purple mb-0">
+            <li class="page-item" [class.active]="i==index" *ngFor="let i of pageNumbers">
+              <a class="page-link" (click)="setIndex(i)">{{i}}</a>
+            </li>
+          </ul>
+        </nav>
+        <!--/Pagination -->
+      </div>
+      <!--Bottom Table UI-->
+    </div>
+  </div>
+</div>
+<!-- Basic example -->

@@ -1,0 +1,554 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Flipping Cards</h2>
+    </div>
+  </div>
+
+  <!-- Basic examples -->
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h4 class="text-center">Basic examples</h4>
+
+      <div class="row d-flex justify-content-center">
+
+
+        <!--Rotating card-->
+        <div class="col-md-4 mb-3">
+          <mdb-flipping-card #cards>
+            <!--Front Side-->
+            <div class="face front tp-box_side tp-box_front">
+
+              <!-- Image-->
+              <div class="card-up">
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">
+              </div>
+              <!--Avatar-->
+              <div class="avatar">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg" class="rounded-circle img-responsive">
+              </div>
+              <!--Content-->
+              <div class="card-body">
+                <h4>Jonathan Doe</h4>
+                <p>Web developer</p>
+                <!--Triggering button-->
+                <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                  <i class="fa fa-repeat"></i> Click here to rotate</a>
+              </div>
+            </div>
+            <!--/.Front Side-->
+
+            <!--Back Side-->
+            <div class="back tp-box_side tp-box_back">
+
+              <!--Content-->
+              <h4>About me</h4>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem
+                amet repellat,
+                dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium
+                quaerat?</p>
+              <hr>
+              <!--Social Icons-->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="icons-sm fb-ic">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm tw-ic">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm gplus-ic">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm li-ic">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+              <!--Triggering button-->
+              <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                <i class="fa fa-undo"></i> Click here to rotate back</a>
+
+            </div>
+            <!--/.Back Side-->
+          </mdb-flipping-card>
+        </div>
+        <!--/.Rotating card-->
+
+        <!--Rotating card-->
+        <div class="col-md-4">
+          <mdb-flipping-card #card>
+            <!--Front Side-->
+            <div class="face front card tp-box_side tp-box_front">
+              <!-- Image-->
+              <div class="card-up">
+                <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+                  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28110%29.jpg" class="img-fluid"
+                    alt="">
+
+                </div>
+              </div>
+              <!--/.Image-->
+
+              <!--Content-->
+              <div class="content">
+                <a class="rotate-btn" data-card="card-2" (click)="card.toggle()">
+                  <i class="fa fa-share-alt"></i>
+                </a>
+                <h4>Card title</h4>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi
+                  vel eius
+                  veniam maxime.</p>
+                <a class="link-text">
+                  <h5>Read more
+                    <i class="fa fa-chevron-right"></i>
+                  </h5>
+                </a>
+              </div>
+              <!--/.Content-->
+
+            </div>
+            <!--/.Front Side-->
+
+            <!--Back Side-->
+            <div class="face back tp-box_side tp-box_back">
+              <!--Title-->
+              <h4 class="card-title">Social shares
+                <i class="fa fa-close rotate-btn" (click)="card.toggle()"></i>
+              </h4>
+              <hr>
+
+              <!--Social Icons-->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-fb waves-light" mdbWavesEffect>
+                    <i class="fa fa-facebook"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-tw waves-light" mdbWavesEffect>
+                    <i class="fa fa-twitter"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-gplus waves-light" mdbWavesEffect>
+                    <i class="fa fa-google-plus"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-li waves-light" mdbWavesEffect>
+                    <i class="fa fa-linkedin"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-git waves-light" mdbWavesEffect>
+                    <i class="fa fa-github"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-pin waves-light" mdbWavesEffect>
+                    <i class="fa fa-pinterest"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn floating="true" size="sm" class="btn-ins waves-light" mdbWavesEffect>
+                    <i class="fa fa-instagram"> </i>
+                  </a>
+                </li>
+              </ul>
+
+              <h5>Join our community</h5>
+              <hr>
+
+              <!--Social Icons-->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a mdbBtn class="btn-fb waves-light" mdbWavesEffect>
+                    <i class="fa fa-facebook"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn class=" btn-tw waves-light" mdbWavesEffect>
+                    <i class="fa fa-twitter"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn class="btn-li waves-light" mdbWavesEffect>
+                    <i class="fa fa-linkedin"> </i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a mdbBtn class="btn-ins waves-light" mdbWavesEffect>
+                    <i class="fa fa-instagram"> </i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--/.Back Side-->
+          </mdb-flipping-card>
+        </div>
+        <!--/.Rotating card-->
+      </div>
+
+    </div>
+  </div>
+  <!-- Basic examples -->
+
+  <hr class="my-5">
+
+  <!-- Using few cards of same type -->
+  <div class="row">
+    <div class="col-md-12 mx-auto">
+      <h4 class="text-center">Using few cards of same type</h4>
+
+      <div class="row d-flex justify-content-center">
+
+        <!--Rotating card-->
+        <div class="col-md-4 mb-3">
+          <mdb-flipping-card #cards1>
+            <!--Front Side-->
+            <div class="face front tp-box_side tp-box_front">
+
+              <!-- Image-->
+              <div class="card-up">
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2859%29.jpg" class="img-fluid">
+              </div>
+              <!--Avatar-->
+              <div class="avatar">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg" class="rounded-circle img-responsive">
+              </div>
+              <!--Content-->
+              <div class="card-body">
+                <h4>Jonathan Doe</h4>
+                <p>Web developer</p>
+                <!--Triggering button-->
+                <a class="rotate-btn" data-card="card-1" (click)="cards1.toggle()">
+                  <i class="fa fa-repeat"></i> Click here to rotate</a>
+              </div>
+            </div>
+            <!--/.Front Side-->
+
+            <!--Back Side-->
+            <div class="back tp-box_side tp-box_back">
+
+              <!--Content-->
+              <h4>About me</h4>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem
+                amet repellat,
+                dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium
+                quaerat?</p>
+              <hr>
+              <!--Social Icons-->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="icons-sm fb-ic">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm tw-ic">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm gplus-ic">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm li-ic">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+              <!--Triggering button-->
+              <a class="rotate-btn" data-card="card-1" (click)="cards1.toggle()">
+                <i class="fa fa-undo"></i> Click here to rotate back</a>
+
+            </div>
+            <!--/.Back Side-->
+          </mdb-flipping-card>
+        </div>
+        <!--/.Rotating card-->
+
+
+        <!--Rotating card-->
+        <div class="col-md-4 mb-3">
+          <mdb-flipping-card #cards2>
+            <!--Front Side-->
+            <div class="face front tp-box_side tp-box_front">
+
+              <!-- Image-->
+              <div class="card-up">
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(41).jpg" class="img-fluid">
+              </div>
+              <!--Avatar-->
+              <div class="avatar">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(11).jpg" class="rounded-circle img-responsive">
+              </div>
+              <!--Content-->
+              <div class="card-body">
+                <h4>Marie Johnson</h4>
+                <p>Web developer</p>
+                <!--Triggering button-->
+                <a class="rotate-btn" data-card="card-1" (click)="cards2.toggle()">
+                  <i class="fa fa-repeat"></i> Click here to rotate</a>
+              </div>
+            </div>
+            <!--/.Front Side-->
+
+            <!--Back Side-->
+            <div class="back tp-box_side tp-box_back">
+
+              <!--Content-->
+              <h4>About me</h4>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem
+                amet repellat,
+                dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium
+                quaerat?</p>
+              <hr>
+              <!--Social Icons-->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="icons-sm fb-ic">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm tw-ic">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm gplus-ic">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm li-ic">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+              <!--Triggering button-->
+              <a class="rotate-btn" data-card="card-1" (click)="cards2.toggle()">
+                <i class="fa fa-undo"></i> Click here to rotate back</a>
+
+            </div>
+            <!--/.Back Side-->
+          </mdb-flipping-card>
+        </div>
+        <!--/.Rotating card-->
+
+
+        <!--Rotating card-->
+        <div class="col-md-4">
+          <mdb-flipping-card #cards3>
+            <!--Front Side-->
+            <div class="face front tp-box_side tp-box_front">
+
+              <!-- Image-->
+              <div class="card-up">
+                <img src="https://mdbootstrap.com/img/Photos/Others/photo7.jpg" class="img-fluid">
+              </div>
+              <!--Avatar-->
+              <div class="avatar">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle img-responsive">
+              </div>
+              <!--Content-->
+              <div class="card-body">
+                <h4>Amy Kill</h4>
+                <p>Content Specialist</p>
+                <!--Triggering button-->
+                <a class="rotate-btn" data-card="card-1" (click)="cards3.toggle()">
+                  <i class="fa fa-repeat"></i> Click here to rotate</a>
+              </div>
+            </div>
+            <!--/.Front Side-->
+
+            <!--Back Side-->
+            <div class="back tp-box_side tp-box_back">
+
+              <!--Content-->
+              <h4>About me</h4>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta. Blanditiis rem
+                amet repellat,
+                dolores nihil quae in mollitia asperiores ut rerum repellendus, voluptatum eum, officia laudantium
+                quaerat?</p>
+              <hr>
+              <!--Social Icons-->
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="icons-sm fb-ic">
+                    <i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm tw-ic">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm gplus-ic">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="icons-sm li-ic">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                </li>
+              </ul>
+              <!--Triggering button-->
+              <a class="rotate-btn" data-card="card-1" (click)="cards3.toggle()">
+                <i class="fa fa-undo"></i> Click here to rotate back</a>
+
+            </div>
+            <!--/.Back Side-->
+          </mdb-flipping-card>
+        </div>
+        <!--/.Rotating card-->
+
+      </div>
+
+    </div>
+  </div>
+  <!-- Using few cards of same type -->
+
+  <hr class="my-5">
+
+  <!-- Card reveal -->
+  <div class="row">
+    <div class="col-md-12 mx-auto mb-5">
+      <h4 class="text-center">Card reveal</h4>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+          <mdb-card-reveal #cards4>
+            <!-- Card front -->
+            <div class="card card-front">
+              <!--Card image-->
+              <div class="view overlay waves-light" mdbWavesEffect>
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo11.jpg" alt="Card image cap">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--/.Card image-->
+              <!--Card content-->
+              <div class="card-body">
+                <!--Social shares button-->
+                <a class="activator mr-2">
+                  <i class="fa fa-share-alt" (click)="cards4.toggle()"></i>
+                </a>
+                <!--Title-->
+                <h4 class="card-title">Card title</h4>
+                <hr>
+                <!--Text-->
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                  card's
+                  content.</p>
+                <a class="link-text">
+                  <h5 class="waves-light" mdbWavesEffect>Read more
+                    <i class="fa fa-chevron-right waves-light" mdbWavesEffect></i>
+                  </h5>
+                </a>
+              </div>
+              <!--/.Card content-->
+            </div>
+            <!--/.Card Front-->
+
+            <!-- Card reveal -->
+            <div class="card-reveal white">
+
+              <!-- Content -->
+              <div class="content text-center">
+
+                <h4 class="card-title font-weight-bold py-4">Social shares
+                  <i class="fa fa-close text-muted" (click)="cards4.toggle()"></i>
+                </h4>
+                <hr>
+                <!-- Social Icons -->
+                <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap">
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-dribbble">
+                      <i class="fa fa-dribbble"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-slack">
+                      <i class="fa fa-slack"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-ins">
+                      <i class="fa fa-instagram"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-pin">
+                      <i class="fa fa-pinterest"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-tw">
+                      <i class="fa fa-twitter"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-gplus">
+                      <i class="fa fa-google-plus"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn floating="true" class="btn-git">
+                      <i class="fa fa-github"> </i>
+                    </a>
+                  </li>
+                </ul>
+                <h5 class="font-weight-bold my-4">Join our community</h5>
+                <hr>
+                <!-- Social Icons -->
+                <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap mt-4">
+                  <li class="list-inline-item">
+                    <a mdbBtn class="btn-fb px-4">
+                      <i class="fa fa-facebook"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn class="btn-tw px-4">
+                      <i class="fa fa-twitter"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn class="btn-li px-4">
+                      <i class="fa fa-linkedin"> </i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a mdbBtn class="btn-ins px-4">
+                      <i class="fa fa-instagram"> </i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Card reveal -->
+          </mdb-card-reveal>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Card reveal -->
+</div>

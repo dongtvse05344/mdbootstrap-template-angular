@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Switch</h2>
+    </div>
+  </div>
+
+  <!-- Basic switch -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <h4 class="text-center">Basic switch</h4>
+      <div class="mx-auto text-center">
+        <!-- Switch -->
+        <div class="switch">
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+
+        <!-- Disabled Switch -->
+        <div class="switch">
+          <label>
+            Off
+            <input disabled type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Basic switch -->
+  <hr class="my-5">
+
+  <!-- Basic switch colors variations -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Basic switch colors variations</h4>
+      <div class="mx-auto text-center">
+        <!-- Switch -->
+        <div class="switch  mdb-color-switch">
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Basic switch colors variations -->
+  <hr class="my-5">
+
+  <!-- Switch with different shapes -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Switch with different shapes</h4>
+      <div class="mx-auto text-center">
+        <!-- Switch -->
+        <div class="switch square blue-switch">
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Switch with different shapes -->
+  <hr class="my-5">
+
+  <!-- Switch within form -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Switch within form</h4>
+      <div class="mx-auto">
+        <mdb-card>
+          <mdb-card-body>
+            <!-- Form register -->
+            <form>
+              <p class="h3 text-center my-4 blue-text">Sign up</p>
+
+              <div class="md-form">
+                <i class="fa fa-user text-left prefix grey-text"></i>
+                <input type="text" id="orangeForm-name" class="form-control" mdbInputDirective>
+                <label for="orangeForm-name">Your name</label>
+              </div>
+              <div class="md-form">
+                <i class="fa fa-envelope text-left prefix grey-text"></i>
+                <input type="text" id="orangeForm-email" class="form-control" mdbInputDirective>
+                <label for="orangeForm-email">Your email</label>
+              </div>
+
+              <div class="md-form">
+                <i class="fa fa-lock text-left prefix grey-text"></i>
+                <input type="password" id="orangeForm-pass" class="form-control" mdbInputDirective>
+                <label for="orangeForm-pass">Your password</label>
+              </div>
+
+              <div class="col-md-12 text-center">
+
+                <p class="font-small text-muted">Would you like to receive our newsletter?</p>
+
+                <!-- Switch -->
+                <div class="switch primary-switch text-muted font-small">
+                  <label>
+                    No
+                    <input type="checkbox" checked="checked">
+                    <span class="lever"></span>
+                    Yes
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="text-center my-3">
+                <button mdbBtn color="primary" rounded="true" class="waves-light" mdbWavesEffect>Sign up</button>
+              </div>
+
+            </form>
+            <!-- Form register -->
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+    </div>
+  </div>
+  <!-- Switch within form -->
+  <hr class="my-5">
+</div>

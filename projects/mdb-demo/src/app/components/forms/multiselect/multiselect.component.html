@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Multiselect</h2>
+    </div>
+  </div>
+
+  <!-- Standard multiselect -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <h4 class="text-center">Standard multiselect</h4>
+      <mdb-select [options]="optionsSelect" [multiple]="true" placeholder="Choose your option"></mdb-select>
+      <label>Example label</label>
+    </div>
+  </div>
+  <!-- Standard multiselect -->
+  <hr class="my-5">
+
+  <!-- Multiselect with options groups -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Multiselect with options groups</h4>
+      <mdb-select [options]="groupOptionsSelect" [multiple]="true" placeholder="Choose your option"></mdb-select>
+      <label>Example label</label>
+    </div>
+  </div>
+  <!-- Multiselect with options groups -->
+  <hr class="my-5">
+
+  <!-- Multiselect with icons -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Multiselect with icons</h4>
+      <mdb-select [options]="iconOptionSelect" [multiple]="true" placeholder="Choose your option"></mdb-select>
+      <label>Example label</label>
+    </div>
+  </div>
+  <!-- Multiselect with icons -->
+  <hr class="my-5">
+
+  <!-- Colorful Multiselect -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Colorful Multiselect</h4>
+      <mdb-select [options]="optionsSelect" [multiple]="true" class="colorful-select dropdown-primary" placeholder="Choose your option"></mdb-select>
+      <label>Example label</label>
+    </div>
+  </div>
+  <!-- Colorful Multiselect -->
+  <hr class="my-5">
+
+  <!-- Multiselect with filled-in class -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Multiselect with filled-in class</h4>
+      <mdb-select [options]="optionsSelect" [multiple]="true" customClass="filled-in" placeholder="Choose your option"></mdb-select>
+      <label>Example label</label>
+    </div>
+  </div>
+  <!-- Multiselect with filled-in class -->
+  <hr class="my-5">
+
+  <!-- Default value in multiselect -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Default value in multiselect</h4>
+      <mdb-select [(ngModel)]="selectedValue" [options]="dateOptionsSelect" [multiple]="true" placeholder="Choose time period"></mdb-select>
+    </div>
+  </div>
+  <!-- Default value in multiselect -->
+  <hr class="my-5">
+
+  <!-- Array of selected values -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Array of selected values</h4>
+      <mdb-select (ngModelChange)="getArrayOfValues($event)" [(ngModel)]="selectedValue" [options]="dateOptionsSelect" [multiple]="true"
+        placeholder="Choose time period"></mdb-select>
+    </div>
+  </div>
+  <!-- Array of selected values -->
+  <hr class="my-5">
+
+  <!-- Events -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Events</h4>
+      <mdb-select [options]="optionsSelect" [multiple]="true" [filterEnabled]="true" (changed)="selectChanged($event)" (opened)="selectOpened($event)"
+        (closed)="selectClosed($event)" (selected)="optionSelected($event)" (deselected)="optionDeselected($event)" (noOptionsFound)="noOptionsFound($event)"
+        placeholder="Choose your option"></mdb-select>
+      <label>Example label</label>
+    </div>
+  </div>
+  <!-- Events -->
+  <hr class="my-5">
+</div>

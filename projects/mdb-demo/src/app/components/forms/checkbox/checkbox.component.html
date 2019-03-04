@@ -1,0 +1,249 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5 mb-3">
+      <h2 class="text-center">Angular Bootstrap Checkbox</h2>
+    </div>
+  </div>
+
+  <!--  Basic Example -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <h4 class="text-center">Default checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [default]="true">Default unchecked</mdb-checkbox>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">Material checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox>Material unchecked</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!--  Basic Example -->
+
+  <hr class="my-5">
+
+  <!--  Checked state  -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <h4 class="text-center">Default checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [default]="true" [checked]="true">Default checked</mdb-checkbox>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">Material checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [checked]="true">Material checked</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!--  Checked state  -->
+
+  <hr class="my-5">
+
+  <!--  Indeterminate state  -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <h4 class="text-center">Default checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [default]="true" [indeterminate]="true">Default Indeterminate</mdb-checkbox>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">Material checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [indeterminate]="true">Material Indeterminate</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!--  Indeterminate state  -->
+
+  <hr class="my-5">
+
+  <!--  Disabled state  -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <h4 class="text-center">Default checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [default]="true" [disabled]="true">Default Disabled</mdb-checkbox>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">Material checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [disabled]="true">Material Disabled</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!--  Disabled state  -->
+
+  <hr class="my-5">
+
+  <!--  Inline state  -->
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <h4 class="text-center">Default checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [default]="true" [inline]="true">Default Inline</mdb-checkbox>
+        <mdb-checkbox [default]="true" [inline]="true">Default Inline</mdb-checkbox>
+        <mdb-checkbox [default]="true" [inline]="true">Default Inline</mdb-checkbox>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4 class="text-center">Material checkboxes </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <mdb-checkbox [inline]="true">Material Inline</mdb-checkbox>
+        <mdb-checkbox [inline]="true">Material Inline</mdb-checkbox>
+        <mdb-checkbox [inline]="true">Material Inline</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!--  Inline state  -->
+
+  <hr class="my-5">
+
+  <!-- Filled-in checkbox -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Material Filled-in </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!-- Filled-in checkbox -->
+        <mdb-checkbox [filledIn]="true" [checked]="true">Filled-in checkbox</mdb-checkbox>
+
+        <!-- Filled-in checkbox disabled-->
+        <mdb-checkbox [filledIn]="true" [checked]="true" [disabled]="true">Filled-in checkbox disabled</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!-- Filled-in checkbox -->
+
+  <hr class="my-5">
+
+  <!-- Checkbox color change -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Checkbox color change</h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!-- Teal example -->
+        <mdb-checkbox class="checkbox-teal" [checked]="true">Teal example</mdb-checkbox>
+
+        <!-- Filled-in orange example -->
+        <mdb-checkbox class="checkbox-warning-filled" [filledIn]="true" [checked]="true">Filled-in orange example</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!-- Checkbox color change -->
+
+  <hr class="my-5">
+
+  <!-- Rounded checkbox -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Rounded checkbox</h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!-- Filled-in rounded example -->
+        <mdb-checkbox [rounded]="true" [checked]="true">Filled-in rounded example</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!-- Rounded checkbox -->
+
+  <hr class="my-5">
+
+  <!-- Checkbox with changed position -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Checkbox with changed position</h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!-- Filled-in rounded example -->
+        <mdb-checkbox [checkboxPosition]="'right'" [checked]="true">Checkbox with changed position</mdb-checkbox>
+      </div>
+    </div>
+  </div>
+  <!-- Checkbox with changed position -->
+
+  <hr class="my-5">
+
+  <!-- Classic checkbox buttons  -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Classic checkbox buttons </h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!--Classic checkbox buttons-->
+        <div class="btn-group">
+          <label mdbBtn color="primary" class="waves-light active" [(ngModel)]="checkboxModel.left" mdbCheckbox mdbWavesEffect>
+            Checkbox 1 (pre-checked)
+          </label>
+          <label mdbBtn color="primary" class="waves-light" [(ngModel)]="checkboxModel.middle" mdbCheckbox mdbWavesEffect>
+            Checkbox 2
+          </label>
+          <label mdbBtn color="primary" class="waves-light" [(ngModel)]="checkboxModel.right" mdbCheckbox mdbWavesEffect>
+            Checkbox 3
+          </label>
+        </div>
+        <!--Classic checkbox buttons-->
+      </div>
+    </div>
+  </div>
+  <!-- Classic checkbox buttons  -->
+
+  <hr class="my-5">
+
+  <!-- Rounded checkbox buttons  -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Rounded checkbox buttons</h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!--Rounded checkbox buttons-->
+        <div class="btn-group">
+          <label mdbBtn class="btn btn-pink btn-rounded active btn-md form-check-label" [(ngModel)]="checkboxModel.left" mdbCheckbox
+            mdbWavesEffect>
+            Checkbox 1 (pre-checked)
+          </label>
+          <label mdbBtn class="btn btn-pink btn-rounded btn-md form-check-label" [(ngModel)]="checkboxModel.middle" mdbCheckbox mdbWavesEffect>
+            Checkbox 2
+          </label>
+          <label mdbBtn class="btn btn-pink btn-rounded btn-md form-check-label" [(ngModel)]="checkboxModel.right" mdbCheckbox mdbWavesEffect>
+            Checkbox 3
+          </label>
+        </div>
+        <!--Rounded checkbox buttons-->
+      </div>
+    </div>
+  </div>
+  <!-- Rounded checkbox buttons  -->
+
+  <hr class="my-5">
+
+  <!-- Rounded checkbox buttons with icons  -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Rounded checkbox buttons with icons</h4>
+      <div class="py-3 px-3" style="border: 1px solid #e5e5e5">
+        <!--Rounded checkbox buttons with icons-->
+        <div class="btn-group">
+          <label mdbBtn class="btn btn-warning btn-rounded active btn-md form-check-label" [(ngModel)]="checkboxModel.left" mdbCheckbox
+            mdbWavesEffect>
+            Checkbox 1 (pre-checked)
+            <i class="fa fa-diamond ml-2"></i>
+          </label>
+          <label mdbBtn class="btn btn-warning btn-rounded btn-md form-check-label" [(ngModel)]="checkboxModel.middle" mdbCheckbox
+            mdbWavesEffect>
+            Checkbox 2
+            <i class="fa fa-user ml-2"></i>
+          </label>
+          <label mdbBtn class="btn btn-warning btn-rounded btn-md form-check-label" [(ngModel)]="checkboxModel.right" mdbCheckbox mdbWavesEffect>
+            Checkbox 3
+            <i class="fa fa-code ml-2"></i>
+          </label>
+        </div>
+        <!--Rounded checkbox buttons with icons-->
+      </div>
+    </div>
+  </div>
+  <!-- Rounded checkbox buttons with icons  -->
+
+  <hr class="my-5">
+</div>

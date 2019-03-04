@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-md-6 text-center mx-auto">
+    <h3 class="title">Tạo mới template</h3>
+  </div>
+  <div class="col-md-8 mx-auto ">
+    <form *ngIf="form" [formGroup]="form" (submit)="create()">
+      <div class="md-form mt-5 form-group">
+        <i class="fa fa-plus-square-o prefix"></i>
+        <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="Name">
+        <label for="form2">Tên </label>
+      </div>
+      <div class="row" style="margin-bottom:10px;">
+        <div class="col-md-6">
+          <div class="mx-auto">
+            <div class="md-form form-group" style="margin-top:0px!important">
+              <i class="fa fa-circle-o prefix"></i>
+              <input mdbInputDirective type="text" class="form-control" id="form19" formControlName="Form">
+              <label for="form19">Form</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mx-auto">
+            <div class="md-form form-group" style="margin-top:0px!important">
+              <i class="fa fa-server prefix"></i>
+              <input mdbInputDirective type="text" class="form-control" id="form18" formControlName="Serial">
+              <label for="form18">Serial</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:-20px;">
+        <div class="col-md-4">
+          <div class="md-form form-group" style="margin-top:0px!important">
+            <i class="fa fa-list-ol prefix"></i>
+            <input mdbInputDirective type="number" class="form-control" id="form19" formControlName="Amount">
+            <label for="form19">Số tối đa</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="md-form form-group" style="margin-top:0px!important">
+            <i class="fa fa-play prefix"></i>
+            <input mdbInputDirective type="number" class="form-control" id="form18" formControlName="BeginNo">
+            <label for="form18">Số bắt đầu</label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="md-form form-group" style="margin-top:0px!important">
+            <i class="fa fa-bolt prefix"></i>
+            <input mdbInputDirective type="number" class="form-control" id="form18" formControlName="CurrentNo">
+            <label for="form18">Số hiện hành</label>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto mt-3">
+        <mdb-date-picker name="mydate" [placeholder]="'Ngày phát hành'" required formControlName="ReleaseDate"></mdb-date-picker>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="file-field big">
+            <a class="btn-floating btn-lg pink lighten-1 mt-0 float-left">
+              <i class="fa fa-paperclip" aria-hidden="true"></i>
+              <input type="file"   (change)="onInvoiceChange($event)" >
+            </a>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="{{messInvoice}}" readonly />
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="file-field big">
+            <a class="btn-floating btn-lg cyan darken-2 mt-0 float-left">
+              <i class="fa fa-heart" aria-hidden="true"></i>
+              <input type="file"  (change)="on_Change($event)">
+            </a>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="{{messReleaseAnnouncement}}" readonly />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button  class="btn btn-default btn-rounded">Tạo mới</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+<swal #errorSwal title="Lỗi" text="Vui lòng kiểm tra lại dữ liệu" type="warning">
+</swal>

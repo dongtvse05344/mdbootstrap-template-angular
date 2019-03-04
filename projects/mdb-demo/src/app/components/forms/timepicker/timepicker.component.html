@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Datepicker</h2>
+    </div>
+  </div>
+
+  <!-- Basic Example -->
+  <div class="row">
+    <div class="col-md-6 mx-auto my-5">
+      <h4 class="text-center">Basic Example</h4>
+      <mdb-time-picker [buttonLabel]="'Done'" [twelvehour]="true" [darktheme]="false" [placeholder]="'Selected time'" [label]="'Light
+version, 12hours'" [showClock]="true" [ngModel]="lightClock"></mdb-time-picker>
+
+      <mdb-time-picker [buttonLabel]="'Done'" [twelvehour]="false" [darktheme]="true" [placeholder]="'Selected time'" [label]="'Dark version, 24hours'"
+        [ngModel]="darkClock"></mdb-time-picker>
+    </div>
+  </div>
+  <!-- Basic Example -->
+</div>

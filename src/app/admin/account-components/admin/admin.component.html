@@ -1,0 +1,128 @@
+
+  <!-- Basic example -->
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-2">
+      <div class="card card-cascade narrower mt-2">
+        <!--Card image-->
+        <div class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
+  
+          <h4 class="white-text font-weight-bold text-uppercase mb-0">Tài khoản Admin</h4>
+  
+        </div>
+        <!--/Card image-->
+  
+        <div class="px-4">
+          <div class="row table-button-group">
+            <div class="col-md-6 left">
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li *ngFor="let i of pageSizeNumbers" class="page-item" [class.active]="pageSize==i" (click)="setPageSize(i)"><a
+                      class="page-link">{{i}}</a></li>
+                </ul>
+              </nav>
+            </div>
+           
+          </div>
+          <!--Table-->
+          <table class="table table-hover table-responsive-md mb-0">
+  
+            <!--Table head-->
+            <thead>
+              <tr class="text-center">
+                  <th>Tài Khoản</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                <th class="th-lg" colspan="3" style="width:10%">Thao Tác</th>
+  
+              </tr>
+            </thead>
+            <!--Table head-->
+  
+            <!--Table body-->
+            <tbody>
+              <tr *ngFor="let item of data.List">
+                  <td>{{item.UserName}}</td>
+                  <td>{{item.Email}}</td>
+                  <td>{{item.PhoneNumber}}</td>
+                <td class="text-center disabled">
+                  <button class="btn-sm" (click)="ToggleActive(item)" mdbBtn type="button" color="info" rounded="true"
+                    outline="true" mdbWavesEffect>
+                    <i mdbTooltip="Khóa doanh nghiệp" *ngIf="item.IsActive == true" class="fa fa-toggle-on"></i>
+                    <i mdbTooltip="Khôi phục doanh nghiệp" *ngIf="item.IsActive == false" class="fa fa-toggle-off"></i>
+                  </button>
+  
+                </td>
+                <td class="disabled">
+                  <button class="btn-sm" [swal]="{ title: 'Xóa công ty', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"
+                    (confirm)="delete(item)" mdbTooltip="Xóa" mdbBtn type="button" color="primary" rounded="true" outline="true"
+                    mdbWavesEffect>
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </td>
+  
+  
+                <td class="text-center disabled">
+                  <button class="btn-sm" [routerLink]="['account',item.Id]" mdbBtn type="button" color="success" rounded="true"
+                    outline="true" mdbWavesEffect>
+                    <i class="fa fa-users"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <!--Table body-->
+          </table>
+  
+        </div>
+  
+        <hr class="my-0">
+  
+        <!--Bottom Table UI-->
+        <div class="d-flex justify-content-center">
+  
+          <!--Pagination -->
+          <nav class="my-4 pt-2">
+            <ul class="pagination pagination-circle pg-purple mb-0">
+  
+              <!--First-->
+              <li class="page-item clearfix d-none d-md-block" (click)="firstPage()" [ngClass]="{disabled: activePage == 1}">
+                <a class="page-link">First</a>
+              </li>
+  
+              <!--Arrow left-->
+              <li class="page-item" (click)="previousPage()" [ngClass]="{disabled: activePage == 1}">
+                <a class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+  
+  
+              <li class="page-item" [class.active]="i==index" *ngFor="let i of pageNumbers">
+                <a class="page-link" (click)="setIndex(i)">{{i}}</a>
+              </li>
+  
+  
+              <!--Arrow right-->
+              <li class="page-item" (click)="nextPage()" [ngClass]="{disabled: activePage == numberOfPaginators}">
+                <a class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+  
+              <!--First-->
+              <li class="page-item clearfix d-none d-md-block" (click)="lastPage()" [ngClass]="{disabled: activePage == numberOfPaginators}">
+                <a class="page-link">Last</a>
+              </li>
+  
+            </ul>
+          </nav>
+          <!--/Pagination -->
+  
+        </div>
+        <!--Bottom Table UI-->
+  
+      </div>
+    </div>
+  </div>
+  <!-- Basic example -->

@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Alerts</h2>
+    </div>
+  </div>
+
+  <!-- Basic Example -->
+  <div class="row">
+    <div class="col-md-12 mx-auto text-center mt-5">
+      <h4 class="text-center">Basic Example</h4>
+      <!--Info message-->
+      <a class="btn btn-info waves-light mx-auto" (click)="showInfo()" mdbWavesEffect>Info message</a>
+      <!--Warning message-->
+      <a class="btn btn-warning waves-light" (click)="showWarning()" mdbWavesEffect>Warning message</a>
+      <!--Success message-->
+      <a class="btn btn-success waves-light" (click)="showSuccess()" mdbWavesEffect>Success message</a>
+      <!--Error message-->
+      <a class="btn btn-danger waves-light" (click)="showError()" mdbWavesEffect>Error message</a>
+    </div>
+  </div>
+  <!-- Basic Example -->
+
+  <hr class="my-5">
+
+  <!-- Modifying opacity with toastClass -->
+  <div class="row">
+    <div class="col-md-12 mx-auto text-center mt-5">
+      <h4 class="text-center">Modifying opacity with toastClass</h4>
+      <!--Info message-->
+      <a class="btn btn-info waves-light mx-auto" (click)="opacityShowInfo()" mdbWavesEffect>Info message</a>
+      <!--Warning message-->
+      <a class="btn btn-warning waves-light" (click)="opacityShowWarning()" mdbWavesEffect>Warning message</a>
+      <!--Success message-->
+      <a class="btn btn-success waves-light" (click)="opacityShowSuccess()" mdbWavesEffect>Success message</a>
+      <!--Error message-->
+      <a class="btn btn-danger waves-light" (click)="opacityShowError()" mdbWavesEffect>Error message</a>
+    </div>
+  </div>
+  <!-- Modifying opacity with toastClass -->
+
+  <hr class="my-5">
+
+  <!-- Showing alerts after server call -->
+  <div class="row">
+    <div class="col-md-12 mx-auto mb-5 text-center mt-5">
+      <h4 class="text-center">Showing alerts after server call</h4>
+      <ul class="list-group" *ngFor="let user of usersArray">
+        <li class="list-group-item">{{ user }}</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Showing alerts after server call -->
+
+</div>

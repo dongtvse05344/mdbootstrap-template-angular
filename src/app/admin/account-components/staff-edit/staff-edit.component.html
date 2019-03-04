@@ -1,0 +1,46 @@
+<div class="container">
+  <!-- Icon Prefixes -->
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h4 class="text-center">Tạo tài khoản cho <b>{{company.Name}}</b></h4>
+      <div class="md-form mt-5">
+        <i class="fa fa-user-plus prefix"></i>
+        <input mdbInputDirective type="text" id="form3" class="form-control" [(ngModel)]="staff.UserName">
+        <label for="form2">Tên tài khoản</label>
+      </div>
+      
+      <div class="md-form ">
+        <i class="fa fa-user prefix"></i>
+        <input mdbInputDirective type="text" id="form2" class="form-control"   [(ngModel)]="staff.Name">
+        <label for="form2">Họ Tên</label>
+      </div>
+      <div class="md-form ">
+        <i class="fa fa-envelope-open prefix"></i>
+        <input mdbInputDirective type="email" id="form2" class="form-control" [(ngModel)]="staff.Email">
+        <label for="form2">Email</label>
+      </div>
+      <div class="md-form ">
+        <i class="fa fa-qrcode prefix"></i>
+        <input mdbInputDirective type="text" id="form2" class="form-control" [(ngModel)]="staff.Code">
+        <label for="form2">Mã Nhân Viên</label>
+      </div>
+      <div class="md-form ">
+        <i class="fa fa-mobile prefix"></i>
+        <input mdbInputDirective type="text" id="form2" class="form-control" [(ngModel)]="staff.PhoneNumber">
+        <label for="form2">Số Điện Thoại</label>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="text-center">Vị trí </h4>
+        </div>
+        <div class="col-md-6">
+          <div  *ngFor="let role of roles" class="">
+            <mdb-checkbox [checked]="false"  [(ngModel)]="role.checked">{{role.text}}</mdb-checkbox>
+          </div>
+        </div>
+      </div>
+      <button (click)="update()" _ngcontent-c17="" color="default" mdbbtn="" mdbwaveseffect="" type="button" class="btn btn-default" 
+        ng-reflect-color="default">Sửa Tài Khoản <mdb-icon _ngcontent-c17="" class="ml-1" icon="magic" ng-reflect-icon="magic" ng-reflect-class="ml-1"><i class="fa fa-magic fa- ml-1 prefix"></i></mdb-icon></button>
+    </div>
+  </div>
+</div>

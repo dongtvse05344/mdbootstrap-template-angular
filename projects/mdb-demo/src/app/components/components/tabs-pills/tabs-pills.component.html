@@ -1,0 +1,356 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <h2 class="text-center">Angular Bootstrap Tabs & Pills</h2>
+    </div>
+  </div>
+
+  <!-- Basic Example -->
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <h4 class="text-center">Basic Example</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <!-- Nav Tabs -->
+        <mdb-tabset #staticTabs [buttonClass]="'md-tabs tabs-3'" [contentClass]="'card'">
+          <!--Panel 1-->
+          <mdb-tab heading="Profile">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 2-->
+          <mdb-tab heading="Follow">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 3-->
+          <mdb-tab heading="Contact">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+        </mdb-tabset>
+      </div>
+    </div>
+  </div>
+  <!-- Basic Example -->
+
+  <hr class="my-5">
+
+  <!-- With Icons -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">With Icons</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <!-- Nav tabs -->
+        <mdb-tabset #staticTabs [buttonClass]="'md-tabs tabs-3 indigo'" [contentClass]="''">
+          <!--Panel 1-->
+          <mdb-tab heading="<i class='fa fa-user'></i> Profile">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 2-->
+          <mdb-tab heading="<i class='fa fa-heart'></i> Follow">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 3-->
+          <mdb-tab heading="<i class='fa fa-envelope'></i> Mail">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+        </mdb-tabset>
+      </div>
+    </div>
+  </div>
+  <!-- With Icons -->
+
+  <hr class="my-5">
+
+  <!-- Pills only -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Pills only</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <!-- Nav tabs -->
+        <mdb-tabset #staticTabs [buttonClass]="'md-tabs tabs-4 pills-secondary white margin'" [contentClass]="''">
+          <!--Panel 1-->
+          <mdb-tab heading="Profile">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 2-->
+          <mdb-tab heading="Follow">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 3-->
+          <mdb-tab heading="Mail">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 4-->
+          <mdb-tab heading="Help">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+        </mdb-tabset>
+      </div>
+    </div>
+  </div>
+  <!-- Pills only -->
+
+  <hr class="my-5">
+
+  <!-- Classic tabs -->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Classic tabs</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <!-- Nav tabs -->
+        <mdb-tabset [buttonClass]="'classic-tabs tabs-cyan'" [contentClass]="'card'" class="classic-tabs">
+          <!--Panel 1-->
+          <mdb-tab heading="Profile">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 2-->
+          <mdb-tab heading="Follow">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 3-->
+          <mdb-tab heading="Contact">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <mdb-tab heading="Be awesome">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+        </mdb-tabset>
+      </div>
+    </div>
+  </div>
+  <!-- Classic tabs -->
+
+  <hr class="my-5">
+
+  <!-- Classic tabs with icons-->
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Classic tabs with icons</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <!-- Nav tabs -->
+        <mdb-tabset [buttonClass]="'classic-tabs tabs-orange'" [contentClass]="'card'" class="classic-tabs">
+          <!--Panel 1-->
+          <mdb-tab heading="<i class='fa fa-user fa-2x'></i><br>Profile">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 2-->
+          <mdb-tab heading="<i class='fa fa-heart fa-2x'></i><br>Follow">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 3-->
+          <mdb-tab heading="<i class='fa fa-envelope fa-2x'></i><br>Contact">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <mdb-tab heading="<i class='fa fa-star fa-2x'></i><br>Be awesome">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+        </mdb-tabset>
+      </div>
+    </div>
+  </div>
+  <!-- Classic tabs with icons -->
+
+  <hr class="my-5">
+
+  <!-- Events-->
+  <div class="row mb-5">
+    <div class="col-md-6 mx-auto">
+      <h4 class="text-center">Events</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+        <!-- Tabset tabs -->
+        <mdb-tabset #staticTabs [buttonClass]="'md-tabs tabs-3 red'" [contentClass]="'card'" (showBsTab)="show($event)" (shownBsTab)="shown($event)"
+          (hideBsTab)="hide($event)" (hiddenBsTab)="hidden($event)">
+          <!--Panel 1-->
+          <mdb-tab heading="Profile" (select)="selectProfileTab()">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 2-->
+          <mdb-tab heading="Follow" (select)="selectFollowTab()">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+          <!--Panel 3-->
+          <mdb-tab heading="Contact">
+            <div class="row">
+              <div class="col-12">
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                  molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                  odit minima.</p>
+              </div>
+            </div>
+          </mdb-tab>
+        </mdb-tabset>
+      </div>
+    </div>
+  </div>
+  <!-- Events -->
+
+</div>
