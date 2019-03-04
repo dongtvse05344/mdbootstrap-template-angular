@@ -13,6 +13,8 @@ import { ProductCreateComponent } from './product-component/product-create/produ
 import { ProductEditComponent } from './product-component/product-edit/product-edit.component';
 import { TextMaskModule } from 'angular2-text-mask';
 import { TemplateEditComponent } from './template-component/template-edit/template-edit.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 @NgModule({
   declarations: [ManagerLayoutComponent, AccountListComponent, TemplateListComponent, TemplateCreateComponent, ProductListComponent, ProductCreateComponent, ProductEditComponent, TemplateEditComponent],
   imports: [
@@ -22,6 +24,7 @@ import { TemplateEditComponent } from './template-component/template-edit/templa
     FormsModule,
     ReactiveFormsModule,
     TextMaskModule,
+    PdfViewerModule,
     SweetAlert2Module.forRoot({
       buttonsStyling: false,
       customClass: 'modal-content',

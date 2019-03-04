@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PageModel } from 'src/app/core/models/PageModel';
 import { TemplateService } from '../../services/template.service';
 import { Template } from '../../models/template';
@@ -9,7 +9,7 @@ import { Template } from '../../models/template';
   styleUrls: ['./template-list.component.scss']
 })
 export class TemplateListComponent implements OnInit {
-
+  @ViewChild('basicModal') basicModal: any;
   constructor(
     private templateSerive: TemplateService
   ) { }
@@ -20,8 +20,9 @@ export class TemplateListComponent implements OnInit {
   pageSize: number = 5;
   pageNumbers: Array<Number>;
   pageSizeNumbers: Number[] = [5, 10, 20, 50];
-  content : string = "";
+  content: string = "";
   nameSearch: string = "";
+  PDFsrc = null;
 
   setPageSize(num: number) {
     this.index = 1;
@@ -67,13 +68,13 @@ export class TemplateListComponent implements OnInit {
       )
   }
   getInvoice(template: Template) {
+    this.PDFsrc = null;
     this.templateSerive.getInvoice(template.Id)
       .subscribe(res => {
-        let url = window.URL.createObjectURL(res);
-        this.content = url;
-        var link = document.createElement('iframe');
-        link.setAttribute('src', url);
-        document.body.appendChild(link);
+        var file = new Blob([res], { type: 'application/pdf' });
+        var fileURL = URL.createObjectURL(file);
+        this.PDFsrc = fileURL;
+        this.basicModal.show();
       });
     //this.content = this.templateSerive.getInvoice_Link(template.Id);
   }
