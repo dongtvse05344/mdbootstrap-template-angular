@@ -31,6 +31,12 @@ export class ProductService {
       `${environment.endPoint}${environment.apiPaths.product.main}?index=${index}&pageSize=${pageSize}&nameSearch=${nameSearch}&codeSearch=${codeSearch}`
     ).toPromise();
   }
+  getAllProducts()
+  {
+    return this.httpClient.get<Array<Product>>(
+      `${environment.endPoint}${environment.apiPaths.product.main}/getall`
+    ).toPromise();
+  }
   getProduct(id:string)
   {
     return this.httpClient.get<Product>(

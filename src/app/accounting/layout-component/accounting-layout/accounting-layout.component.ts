@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, Inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-accounting-layout',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountingLayoutComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private renderer: Renderer2,
+    private router: Router,
+    @Inject(DOCUMENT) private document: any
+  ) { }
   ngOnInit() {
+    const body = this.document.querySelector('body');
+    this.renderer.addClass(body, 'light-blue-skin');
   }
 
 }

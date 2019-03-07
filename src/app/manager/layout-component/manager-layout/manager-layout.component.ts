@@ -19,7 +19,7 @@ export class ManagerLayoutComponent implements OnInit, OnDestroy {
   constructor(
     private renderer: Renderer2,
     private router: Router,
-    
+
     @Inject(DOCUMENT) private document: any
   ) { }
 

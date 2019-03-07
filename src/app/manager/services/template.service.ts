@@ -38,6 +38,12 @@ export class TemplateService {
     )
       .toPromise();
   }
+  getAllTemplates() {
+    return this.httpClient.get<Array<Template>>(
+      `${environment.endPoint}${environment.apiPaths.template.main}/getall`
+    )
+      .toPromise();
+  }
   getTemplate(id: string) {
     return this.httpClient.get<Template>(
       `${environment.endPoint}${environment.apiPaths.template.main}/${id}`,

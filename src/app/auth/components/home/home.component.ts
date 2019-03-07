@@ -34,6 +34,11 @@ export class HomeComponent implements OnInit {
     {
       this.router.navigate(['manager']);
     }
+    else
+    if(roles.includes(environment.RoleName.RoleAccountingManager.value))
+    {
+      this.router.navigate(['accounting']);
+    }
   }
 
 }

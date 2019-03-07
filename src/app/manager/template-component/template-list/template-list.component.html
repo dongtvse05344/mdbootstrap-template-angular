@@ -7,9 +7,6 @@
       <label for="form41" class="">Tên template</label>
     </div>
   </div>
-
-
-
 </div>
 <!--/.Third row-->
 <!-- Basic example -->
@@ -17,8 +14,7 @@
   <div class="col-md-12 mx-auto mt-2">
     <div class="card card-cascade narrower mt-2">
       <!--Card image-->
-      <div
-        class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
+      <div class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
 
         <h4 class="white-text font-weight-bold text-uppercase mb-0">Danh sách template</h4>
 
@@ -30,8 +26,8 @@
           <div class="col-md-6 left">
             <nav aria-label="...">
               <ul class="pagination">
-                <li *ngFor="let i of pageSizeNumbers" class="page-item" [class.active]="pageSize==i"
-                  (click)="setPageSize(i)"><a class="page-link">{{i}}</a></li>
+                <li *ngFor="let i of pageSizeNumbers" class="page-item" [class.active]="pageSize==i" (click)="setPageSize(i)"><a
+                    class="page-link">{{i}}</a></li>
               </ul>
             </nav>
           </div>
@@ -76,10 +72,9 @@
                 </button>
               </td>
               <td>
-                <button class="btn-md"
-                  [swal]="{ title: 'Xóa sản phẩm', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"
-                  (confirm)="delete(item)" mdbTooltip="Xóa" mdbBtn type="button" color="primary" rounded="true"
-                  outline="true" mdbWavesEffect>
+                <button class="btn-md" [swal]="{ title: 'Xóa sản phẩm', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"
+                  (confirm)="delete(item)" mdbTooltip="Xóa" mdbBtn type="button" color="primary" rounded="true" outline="true"
+                  mdbWavesEffect>
                   <i class="fa fa-trash"></i>
                 </button>
               </td>
@@ -108,8 +103,8 @@
 </div>
 <!-- Basic example -->
 
-<div mdbModal #basicModal="mdbModal"  style="overflow-y: auto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
-  aria-hidden="true">
+<div mdbModal #basicModal="mdbModal" style="overflow-y: auto" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-fluid" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -122,8 +117,8 @@
         <pdf-viewer *ngIf="PDFsrc" [src]="PDFsrc" [render-text]="true" style="display: block;"></pdf-viewer>
       </div>
       <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
-          (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()"
+          mdbWavesEffect>Close</button>
       </div>
     </div>
   </div>
