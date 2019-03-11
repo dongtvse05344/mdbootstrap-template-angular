@@ -39,11 +39,11 @@ export class ProductCreateComponent implements OnInit {
       { value: 10, label: '10%' },
     ];
     this.form = this.fb.group({
-      Name : new FormControl('',[Validators.required, Validators.minLength(3)]),
-      Code : new FormControl('',[Validators.required, Validators.minLength(3)]),
-      Unit : new FormControl('',[Validators.required, Validators.minLength(3)]),
-      UnitPrice : new FormControl('',Validators.required),
-      VATRate : new FormControl(10,Validators.required),
+      Name: new FormControl('',[Validators.required, Validators.minLength(3)]),
+      Code: new FormControl('',[Validators.required, Validators.minLength(3)]),
+      Unit: new FormControl('',[Validators.required, Validators.minLength(3)]),
+      UnitPrice: new FormControl('',Validators.required),
+      VATRate: new FormControl(10,Validators.required),
     });
   }
 

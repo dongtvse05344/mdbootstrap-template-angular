@@ -53,6 +53,10 @@ export const environment = {
     },
     product:{
       main: 'api/Product',
+    },
+    invoice:{
+      main: 'api/Invoice',
+      word: '/AmountInWord'
     }
   },
 

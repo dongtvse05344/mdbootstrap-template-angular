@@ -33,6 +33,8 @@ export class LoginComponent implements OnInit {
   simpleForm: FormGroup;
 
   ngOnInit() {
+    this.model.password = '123456';
+    this.model.username = 'hisoft.accounting.manager'
   }
 
   Login() {

@@ -1,4 +1,4 @@
-<form [formGroup]="form" (submit)="create()">
+<form *ngIf="form" [formGroup]="form" (submit)="update()">
 
   <div class="row">
     <div class="col-lg-8">
@@ -6,7 +6,7 @@
       <div class="md-form input-group">
         <input type="search" class="form-control" placeholder="Mã số thuế ..." formControlName="TaxNo">
         <div class="input-group-btn">
-          <button mdbBtn color="primary" size="md" class="waves-light" type="button" (click)="GetByTaxNo()"
+          <button mdbBtn color="primary" size="md" class="waves-light" type="button" 
             mdbWavesEffect>Lấy thông tin!</button>
         </div>
       </div>
@@ -169,7 +169,7 @@
     </div>
   </div>
   <div class="row mt-1">
-    <button mdbBtn color="blue-grey" mdbWavesEffect>Xuất hóa đơn</button>
+    <button mdbBtn color="blue-grey" mdbWavesEffect>Sửa hóa đơn</button>
   </div>
 </form>
 <div class="mt-5"></div>
