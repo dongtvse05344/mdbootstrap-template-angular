@@ -57,6 +57,12 @@ export const environment = {
     invoice:{
       main: 'api/Invoice',
       word: '/AmountInWord'
+    },
+    CurrentSign:{
+      main: '/api/CurrentSign',
+      code: '/GenerateCode',
+      recode: '/RegenerateCode',
+      
     }
   },
 

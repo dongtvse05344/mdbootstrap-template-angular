@@ -80,4 +80,22 @@ export class InvoiceService {
       }
     ).toPromise();
   }
+  getCodeSign()
+  {
+    return this.httpClient.post<any>(
+      `${environment.endPoint}${environment.apiPaths.CurrentSign.main}${environment.apiPaths.CurrentSign.code}`,
+      {
+
+      }
+    ).toPromise();
+  }
+  reGetCodeSign()
+  {
+    return this.httpClient.post<any>(
+      `${environment.endPoint}${environment.apiPaths.CurrentSign.main}${environment.apiPaths.CurrentSign.recode}`,
+      {
+
+      }
+    ).toPromise();
+  }
 }

@@ -41,7 +41,7 @@
             </nav>
           </div>
           <div class="col-md-6 right text-right">
-            <button routerLink="create" _ngcontent-c22="" color="success" mdbbtn="" mdbwaveseffect="" outline="true" type="button" class="btn btn-outline-default"
+            <button (click)="getCode()" _ngcontent-c22="" color="success" mdbbtn="" mdbwaveseffect="" outline="true" type="button" class="btn btn-outline-default"
               ng-reflect-color="success" ng-reflect-outline="true">
               <i class="fa fa-check"></i>Kí hóa đơn</button>
           </div>
@@ -158,3 +158,14 @@
     </div>
   </div>
 </div>
+
+<swal
+  #errorSignCode
+  title="Mã đã được tạo"
+  text="Có vẻ đang có người dùng mã, bạn có muốn tạo mã ?"
+  type="warning"
+  [showCancelButton]="true"
+  [focusCancel]="true"
+  (confirm)="getReCode()"
+ >
+</swal>

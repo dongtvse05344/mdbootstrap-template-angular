@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { InvoiceService } from '../../services/invoice.service';
 import { PageModel } from 'src/app/core/models/PageModel';
 import { Invoice } from '../../models/Invoice';
+import { SwalComponent } from '@toverux/ngx-sweetalert2';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-invoice-list',
@@ -10,6 +12,7 @@ import { Invoice } from '../../models/Invoice';
 })
 export class InvoiceListComponent implements OnInit {
   @ViewChild('basicModal') basicModal: any;
+  @ViewChild('errorSignCode') private errorsignCodeSwal: SwalComponent;
 
   constructor(
     private readonly invoiceService: InvoiceService
@@ -19,6 +22,7 @@ export class InvoiceListComponent implements OnInit {
     this.getData();
   }
 
+  _signCode :string;
   data = new PageModel<Invoice>();
   index: number = 1;
   pageSize: number = 5;
@@ -71,31 +75,57 @@ export class InvoiceListComponent implements OnInit {
     //this.content = this.templateSerive.getInvoice_Link(template.Id);
   }
 
-  approveInvoice(id:string)
-  {
+  approveInvoice(id: string) {
     this.invoiceService.approveInvoice(id)
       .then(
-        ()=>{
+        () => {
           this.getData();
         }
       )
       .catch(
-        (e)=>{
+        (e) => {
           console.error(e);
         }
       )
   }
-  delete(id:string)
-  {
+  delete(id: string) {
     this.invoiceService.deleteInvoice(id)
       .then(
-        ()=>{
+        () => {
           this.getData();
         }
       )
       .catch(
-        (e)=>{
+        (e) => {
           console.error(e);
+        }
+      )
+  }
+  getCode()
+  {
+    this.invoiceService.getCodeSign()
+      .then(
+        (response:any)=>{
+          this._signCode = response.value;
+          console.log(this._signCode);
+          swal(this._signCode, 'Dán mã vào chương trình để kí', 'success');
+        }
+      )
+      .catch(
+        ()=>
+        {
+          this.errorsignCodeSwal.show();
+        }
+      )
+  }
+
+  getReCode()
+  {
+    this.invoiceService.reGetCodeSign()
+      .then(
+        (response)=>{
+          this._signCode = response.value;
+          swal(this._signCode, 'Dán mã vào chương trình để kí', 'success');
         }
       )
   }
