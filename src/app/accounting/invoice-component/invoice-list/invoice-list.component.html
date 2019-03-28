@@ -95,7 +95,7 @@
                   <i class="fa fa-thumbs-up"></i>
                 </button>
               </td>
-              <td class="text-center" *ngIf="item.Type==1">
+              <td class="text-center" *ngIf="item.Type==1 || item.Type ==2">
                 <button class="btn-md"  mdbBtn type="button" color="primary" rounded="true"
                   outline="true" mdbWavesEffect>
                   <i class="fa fa-toggle-on"></i>
@@ -149,7 +149,7 @@
         <h4 class="modal-title w-100" id="myModalLabel">PDF File</h4>
       </div>
       <div class="modal-body">
-        <pdf-viewer *ngIf="PDFsrc" [src]="PDFsrc" [render-text]="true" style="display: block;"></pdf-viewer>
+        <pdf-viewer *ngIf="PDFsrc" [src]="PDFsrc" [render-text]="true" [autoresize]="true" style="display: block;"></pdf-viewer>
       </div>
       <div class="modal-footer">
         <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()"
