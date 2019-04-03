@@ -9,6 +9,7 @@ const routes: Routes = [
 
     { path: 'accounting', component: AccountingLayoutComponent, 
         children: [
+            {path: '',redirectTo: 'invoice', pathMatch: "full"},
             {path: 'invoice',component: InvoiceListComponent},
             {path: 'invoice/create',component: InvoiceCreateComponent},
             {path: 'invoice/:id/edit', component: InvoiceEditComponent}

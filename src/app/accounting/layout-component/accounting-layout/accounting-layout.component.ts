@@ -18,5 +18,9 @@ export class AccountingLayoutComponent implements OnInit {
     const body = this.document.querySelector('body');
     this.renderer.addClass(body, 'light-blue-skin');
   }
-
+  logOut()
+  {
+    localStorage.clear();
+    this.router.navigate([""]);
+  }
 }

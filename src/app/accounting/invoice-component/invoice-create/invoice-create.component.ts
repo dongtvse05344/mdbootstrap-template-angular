@@ -76,15 +76,15 @@ export class InvoiceCreateComponent implements OnInit {
         }
       );
     this.form = this.fb.group({
-      TaxNo: new FormControl('0315549587',Validators.required),
+      TaxNo: new FormControl('',Validators.required),
       Name: new FormControl(''),
       Enterprise: new FormControl('',Validators.required),
       Address: new FormControl('',Validators.required),
       Tel: new FormControl(''),
       Fax: new FormControl(''),
-      Mail: new FormControl('xhunter1412@gmail.com',Validators.required),
-      Bank: new FormControl('VietcomBank'),
-      BankAccountNumber: new FormControl('11266487254'),
+      Mail: new FormControl('',Validators.required),
+      Bank: new FormControl(''),
+      BankAccountNumber: new FormControl(''),
       PaymentMethod: new FormControl('Tiền mặt',Validators.required),
       PaymentStatus: new FormControl(0),
       SubTotal: new FormControl(0),

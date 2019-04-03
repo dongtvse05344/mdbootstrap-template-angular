@@ -2,3 +2,21 @@
 .select-dropdown li span{
     color: black!important;
 }
+
+
+// scrollbar
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: rgba(91, 155, 213, 0.3);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(91, 155, 213, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(91, 155, 213);
+  }

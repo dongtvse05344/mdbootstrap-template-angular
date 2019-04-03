@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.model.password = '123456';
-    this.model.username = 'hisoft.accounting.manager'
+    this.model.username = ''
   }
 
   Login() {
