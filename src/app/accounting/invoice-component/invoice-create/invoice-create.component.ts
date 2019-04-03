@@ -94,7 +94,7 @@ export class InvoiceCreateComponent implements OnInit {
             Total: new FormControl(0),
             AmountInWords: new FormControl(),
             DueDate: new FormControl(this.getDate(new Date())),
-            Date: new FormControl('2019-03-31', Validators.required),
+            Date: new FormControl(this.getDate(new Date()), Validators.required),
             Note: new FormControl(''),
             TemplateId: new FormControl('', Validators.required),
             Type: new FormControl(0),

@@ -30,8 +30,8 @@ export class InvoiceListComponent implements OnInit {
   pageSizeNumbers: Number[] = [5, 10, 20, 50];
   taxNoSearch: string = "";
 
-  monthSearch: number = 3;
-  yearSearch: number = 2019;
+  monthSearch: number =  new Date().getMonth() +1;
+  yearSearch: number = new Date().getFullYear();
 
   setPageSize(num: number) {
     this.index = 1;
