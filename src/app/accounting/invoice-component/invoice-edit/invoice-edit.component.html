@@ -47,7 +47,7 @@
           formControlName="TemplateId"></mdb-select>
       </div>
       <div class="mx-auto mt-5">
-        <mdb-select [options]="PaymentType" customClass="filled-in" formControlName="PaymentMethod"
+        <mdb-select [options]="enviroment.typeOfPayments" customClass="filled-in" formControlName="PaymentMethod"
           placeholder="Hình thức thanh toán"></mdb-select>
       </div>
       <div class="md-form form-group">
@@ -66,12 +66,12 @@
         <label for="form2">Email </label>
       </div>
       <div class="mx-auto ">
-        <mdb-date-picker name="mydate" [placeholder]="'Hạn Thanh toán'" required formControlName="DueDate">
+        <mdb-date-picker name="mydate" [placeholder]="'Hạn Thanh toán'" formControlName="DueDate">
         </mdb-date-picker>
       </div>
 
       <div class="mx-auto ">
-        <mdb-date-picker name="mydate" [placeholder]="'Hạn Thanh toán'" required formControlName="Date">
+        <mdb-date-picker name="mydate" [placeholder]="'Ngày xuất hóa đơn'" required formControlName="Date">
         </mdb-date-picker>
       </div>
     </div>

@@ -45,8 +45,8 @@ export class ProductEditComponent implements OnInit {
             this.product = response;
             this.form = this.fb.group({
               Id: new FormControl(this.product.Id),
-              Name: new FormControl(this.product.Name, [Validators.required, Validators.minLength(4)]),
-              Code: new FormControl(this.product.Code, [Validators.required, Validators.minLength(3)]),
+              Name: new FormControl(this.product.Name, [Validators.required]),
+              Code: new FormControl(this.product.Code, [Validators.required]),
               Unit: new FormControl(this.product.Unit, Validators.required),
               UnitPrice: new FormControl(this.product.UnitPrice, Validators.required),
               VATRate: new FormControl(this.product.VATRate, Validators.required)

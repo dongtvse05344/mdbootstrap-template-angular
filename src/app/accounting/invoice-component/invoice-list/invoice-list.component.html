@@ -57,7 +57,7 @@
           <thead>
             <tr class="">
               <th class="th-lg">Tên đối tác</th>
-              <th class="th-lg">Hạn thanh toán</th>
+              <th class="th-lg">Ngày xuất hóa đơn</th>
               <th class="th-lg">Số</th>
               <th class="th-lg">Tổng tiền</th>
               <th class="th-lg">Chi tiết</th>
@@ -69,7 +69,7 @@
           <tbody>
             <tr *ngFor="let item of data.List">
               <td [routerLink]="['edit',item.Id]"><b>{{item.Enterprise}}</b><br /></td>
-              <td>{{item.DueDate | date:'dd-MM-yyyy'}}</td>
+              <td>{{item.DateCreated | date:'dd-MM-yyyy'}}</td>
               <td>{{item.Number}}</td>
               <td>{{item.Total | number }} VND</td>
               <td ><button mdbBtn type="button"  color="default" (click)="getInvoice(item)"  size="md" outline="true" mdbWavesEffect>

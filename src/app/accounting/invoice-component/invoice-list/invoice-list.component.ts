@@ -51,7 +51,6 @@ export class InvoiceListComponent implements OnInit {
           for (var i = response.Left; i <= response.Right; i++) {
             this.pageNumbers.push(i);
           }
-          console.log(this.data);
         }
       );
   }

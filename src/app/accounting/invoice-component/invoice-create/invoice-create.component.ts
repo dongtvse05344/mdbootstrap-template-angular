@@ -13,6 +13,7 @@ import {CompanyService} from 'src/app/admin/services/company.service';
 import {Company} from 'src/app/admin/models/company';
 import {SwalComponent} from '@toverux/ngx-sweetalert2';
 import {Router, ActivatedRoute} from '@angular/router';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-invoice-create',
@@ -48,10 +49,7 @@ export class InvoiceCreateComponent implements OnInit {
         {value: 5, label: '5%'},
         {value: 10, label: '10%'},
     ];
-    PaymentType: Array<any> = [
-        {value: 'Tiền mặt', label: 'Thanh toán bằng tiền mặt'},
-        {value: 'Chuyển khoản', label: 'Thanh toán bằng chuyển khoản'}
-    ];
+    enviroment = environment;
 
     ngOnInit() {
         this.templateService.getAllTemplates()
@@ -63,6 +61,9 @@ export class InvoiceCreateComponent implements OnInit {
                             label: el.Form + ' - ' + el.Serial
                         };
                     });
+                    if (!this.form.controls['TemplateId'].value) {
+                        this.form.controls['TemplateId'].patchValue(this.templateSelect[0].value);
+                    }
                 }
             );
         this.productService.getAllProducts()
@@ -86,15 +87,15 @@ export class InvoiceCreateComponent implements OnInit {
             Mail: new FormControl(''),
             Bank: new FormControl(''),
             BankAccountNumber: new FormControl(''),
-            PaymentMethod: new FormControl('Tiền mặt', Validators.required),
+            PaymentMethod: new FormControl(environment.typeOfPayments[0].value, Validators.required),
             PaymentStatus: new FormControl(0),
             SubTotal: new FormControl(0),
             VATRate: new FormControl(-1),
             VATAmount: new FormControl(0),
             Total: new FormControl(0),
             AmountInWords: new FormControl(),
-            DueDate: new FormControl(this.getDate(new Date())),
-            Date: new FormControl('2019-03-31', Validators.required),
+            DueDate: new FormControl(''),
+            Date: new FormControl(this.getDate(new Date()), Validators.required),
             Note: new FormControl(''),
             TemplateId: new FormControl('', Validators.required),
             Type: new FormControl(0),

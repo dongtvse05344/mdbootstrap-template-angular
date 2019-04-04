@@ -17,7 +17,6 @@ export class InvoiceService {
   {
     return this.httpClient.get<string>(
       `${environment.endPoint}${environment.apiPaths.invoice.main}${environment.apiPaths.invoice.word}/${gNum}`,
-     
     ).toPromise();
   }
 
