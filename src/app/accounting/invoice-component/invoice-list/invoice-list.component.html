@@ -1,178 +1,188 @@
 <!--Third row-->
 <div class="row " style="margin-top:20px;">
-  <!--First column-->
-  <div class="col-md-3">
-    <div class="md-form">
-      <input mdbInputDirective type="text" id="form41" class="form-control" (keyup)="search()" [(ngModel)]="nameSearch">
-      <label for="form41" class="">Tên công ty</label>
+    <!--First column-->
+    <div class="col-md-3">
+        <div class="md-form">
+            <input mdbInputDirective type="text" id="form41" class="form-control"
+                   [ngModel]="state.enterprise" (ngModelChange)="state.enterprise = $event; getData()">
+            <label for="form41" class="">Tên công ty</label>
+        </div>
     </div>
-  </div>
 
-  <!--Second column-->
-  <div class="col-md-3">
-    <div class="md-form">
-      <input mdbInputDirective type="text" id="form51" class="form-control" (keyup)="search()" [(ngModel)]="codeSearch">
-      <label for="form51" class="">Từ ngày</label>
+    <!--Second column-->
+    <div class="col-md-3">
+        <div class="md-form">
+            <input mdbInputDirective type="text" id="form42" class="form-control"
+                   [dpDayPicker]="config"
+                   theme="dp-material" mode="month"
+                   [ngModel]="state.monthYear"
+                   (ngModelChange)="changeDate($event)">
+            <label for="form42" class="">Tháng / Năm</label>
+        </div>
     </div>
-  </div>
 
-  <div class="col-md-3">
-    <div class="md-form">
-      <input mdbInputDirective type="text" id="form51" class="form-control" (keyup)="search()" [(ngModel)]="codeSearch">
-      <label for="form51" class="">Đến ngày</label>
-    </div>
-  </div>
 
 </div>
 <!--/.Third row-->
 <!-- Basic example -->
 <div class="row">
-  <div class="col-md-12 mx-auto mt-2">
-    <div class="card card-cascade narrower mt-2">
-      <!--Card image-->
-      <div class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
+    <div class="col-md-12 mx-auto mt-2">
+        <div class="card card-cascade narrower mt-2">
+            <!--Card image-->
+            <div class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
 
-        <h4 class="white-text font-weight-bold text-uppercase mb-0">Danh sách Hóa đơn</h4>
+                <h4 class="white-text font-weight-bold text-uppercase mb-0">Danh sách Hóa đơn</h4>
 
-      </div>
-      <!--/Card image-->
+            </div>
+            <!--/Card image-->
 
-      <div class="px-4">
-        <div class="row table-button-group">
-          <div class="col-md-6 left">
-            <nav aria-label="...">
-              <ul class="pagination">
-                <li *ngFor="let i of pageSizeNumbers" class="page-item" [class.active]="pageSize==i" (click)="setPageSize(i)"><a
-                    class="page-link">{{i}}</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-md-6 right text-right">
-            <button (click)="getCode()" _ngcontent-c22="" color="success" mdbbtn="" mdbwaveseffect="" outline="true" type="button" class="btn btn-outline-default"
-              ng-reflect-color="success" ng-reflect-outline="true">
-              <i class="fa fa-check"></i>Kí hóa đơn</button>
-          </div>
+            <div class="px-4">
+                <div class="row table-button-group">
+                    <div class="col-md-6 left">
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li *ngFor="let i of state.pageSizeNumbers" class="page-item"
+                                    [class.active]="state.pageSize==i" (click)="setPageSize(i)"><a
+                                        class="page-link">{{i}}</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 right text-right">
+                        <button (click)="getCode()" _ngcontent-c22="" color="success" mdbbtn="" mdbwaveseffect=""
+                                outline="true" type="button" class="btn btn-outline-default"
+                                ng-reflect-color="success" ng-reflect-outline="true">
+                            <i class="fa fa-check"></i>Kí hóa đơn
+                        </button>
+                    </div>
+                </div>
+                <table class="table table-hover table-responsive-md mb-0 animated bounceInUp">
+                    <thead>
+                    <tr class="">
+                        <th class="th-lg">Tên đối tác</th>
+                        <th class="th-lg">Ngày xuất hóa đơn</th>
+                        <th class="th-lg">Số</th>
+                        <th class="th-lg">Tổng tiền</th>
+                        <th class="th-lg">Chi tiết</th>
+                        <th class="th-lg text-center" colspan="3" style="width:10%">Thao Tác</th>
+
+                    </tr>
+                    </thead>
+                    <!--Table body-->
+                    <tbody>
+                    <tr *ngFor="let item of data.List">
+                        <td [routerLink]="['edit',item.Id]"><b>{{item.Enterprise}}</b><br/></td>
+                        <td>{{item.DateCreated | date:'dd-MM-yyyy'}}</td>
+                        <td>{{item.Number}}</td>
+                        <td>{{item.Total | number }} VND</td>
+                        <td>
+                            <button mdbBtn type="button" color="default" (click)="getInvoice(item)" size="md"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-file-pdf-o"></i>
+                            </button>
+                        </td>
+                        <td class="text-center" *ngIf="item.Type==0">
+                            <button class="btn-md" [routerLink]="[item.Id, 'edit']" mdbBtn type="button" color="warning"
+                                    rounded="true"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </td>
+                        <td class="text-center" *ngIf="item.Type==0">
+                            <button class="btn-md" (click)="approveInvoice(item.Id)" mdbBtn type="button" color="light"
+                                    rounded="true"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-thumbs-up"></i>
+                            </button>
+                        </td>
+                        <td *ngIf="item.Type==0">
+                            <button class="btn-md"
+                                    [swal]="{ title: 'Xóa sản phẩm', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"
+                                    (confirm)="delete(item.Id)"
+                                    mdbTooltip="Xóa" mdbBtn type="button" color="primary" rounded="true" outline="true"
+                                    mdbWavesEffect>
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                        <td class="text-center" *ngIf="item.Type==1">
+                            <button class="btn-md" mdbBtn type="button" color="info" rounded="true"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-thumbs-up"></i>
+                            </button>
+                        </td>
+                        <td class="text-center" *ngIf="item.Type==1 || item.Type ==2">
+                            <button class="btn-md" mdbBtn type="button" color="primary" rounded="true"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-toggle-on"></i>
+                            </button>
+                        </td>
+                        <td class="text-center" *ngIf="item.Type==4">
+                            <button class="btn-md" mdbBtn type="button" color="primary" rounded="true"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-toggle-off"></i>
+                            </button>
+                        </td>
+                        <td class="text-center" *ngIf="item.Type==2">
+                            <button class="btn-md" mdbBtn type="button" color="success" rounded="true"
+                                    outline="true" mdbWavesEffect>
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                    <!--Table body-->
+                </table>
+            </div>
+            <hr class="my-0">
+            <!--Bottom Table UI-->
+            <div class="d-flex justify-content-center">
+                <!--Pagination -->
+                <nav class="my-4 pt-2">
+                    <ul class="pagination pagination-circle pg-purple mb-0">
+                        <li class="page-item" [class.active]="i==state.index" *ngFor="let i of state.pageNumbers">
+                            <a class="page-link" (click)="setIndex(i)">{{i}}</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!--/Pagination -->
+            </div>
+            <!--Bottom Table UI-->
         </div>
-        <table class="table table-hover table-responsive-md mb-0 animated bounceInUp">
-          <thead>
-            <tr class="">
-              <th class="th-lg">Tên đối tác</th>
-              <th class="th-lg">Ngày xuất hóa đơn</th>
-              <th class="th-lg">Số</th>
-              <th class="th-lg">Tổng tiền</th>
-              <th class="th-lg">Chi tiết</th>
-              <th class="th-lg text-center" colspan="3" style="width:10%">Thao Tác</th>
-
-            </tr>
-        </thead>
-          <!--Table body-->
-          <tbody>
-            <tr *ngFor="let item of data.List">
-              <td [routerLink]="['edit',item.Id]"><b>{{item.Enterprise}}</b><br /></td>
-              <td>{{item.DateCreated | date:'dd-MM-yyyy'}}</td>
-              <td>{{item.Number}}</td>
-              <td>{{item.Total | number }} VND</td>
-              <td ><button mdbBtn type="button"  color="default" (click)="getInvoice(item)"  size="md" outline="true" mdbWavesEffect>
-                <i class="fa fa-file-pdf-o"></i>
-              </button></td>
-              <td class="text-center" *ngIf="item.Type==0">
-                <button class="btn-md" [routerLink]="[item.Id, 'edit']" mdbBtn type="button" color="warning" rounded="true"
-                  outline="true" mdbWavesEffect>
-                  <i class="fa fa-pencil"></i>
-                </button>
-              </td>
-              <td class="text-center" *ngIf="item.Type==0">
-                <button class="btn-md" (click)="approveInvoice(item.Id)" mdbBtn type="button" color="light" rounded="true"
-                  outline="true" mdbWavesEffect>
-                  <i class="fa fa-thumbs-up"></i>
-                </button>
-              </td>
-              <td *ngIf="item.Type==0"> 
-                <button class="btn-md" 
-                  [swal]="{ title: 'Xóa sản phẩm', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"
-                  (confirm)="delete(item.Id)"
-                   mdbTooltip="Xóa" mdbBtn type="button" color="primary" rounded="true" outline="true"
-                  mdbWavesEffect>
-                  <i class="fa fa-trash"></i>
-                </button>
-              </td>
-              <td class="text-center" *ngIf="item.Type==1">
-                <button class="btn-md"  mdbBtn type="button" color="info" rounded="true"
-                  outline="true" mdbWavesEffect>
-                  <i class="fa fa-thumbs-up"></i>
-                </button>
-              </td>
-              <td class="text-center" *ngIf="item.Type==1 || item.Type ==2">
-                <button class="btn-md"  mdbBtn type="button" color="primary" rounded="true"
-                  outline="true" mdbWavesEffect>
-                  <i class="fa fa-toggle-on"></i>
-                </button>
-              </td>
-              <td class="text-center" *ngIf="item.Type==4">
-                <button class="btn-md"  mdbBtn type="button" color="primary" rounded="true"
-                  outline="true" mdbWavesEffect>
-                  <i class="fa fa-toggle-off"></i>
-                </button>
-              </td>
-              <td class="text-center" *ngIf="item.Type==2">
-                <button class="btn-md"  mdbBtn type="button" color="success" rounded="true"
-                  outline="true" mdbWavesEffect>
-                  <i class="fa fa-check"></i>
-                </button>
-              </td>
-              
-            </tr>
-          </tbody>
-          <!--Table body-->
-        </table>
-      </div>
-      <hr class="my-0">
-      <!--Bottom Table UI-->
-      <div class="d-flex justify-content-center">
-        <!--Pagination -->
-        <nav class="my-4 pt-2">
-          <ul class="pagination pagination-circle pg-purple mb-0">
-            <li class="page-item" [class.active]="i==index" *ngFor="let i of pageNumbers">
-              <a class="page-link" (click)="setIndex(i)">{{i}}</a>
-            </li>
-          </ul>
-        </nav>
-        <!--/Pagination -->
-      </div>
-      <!--Bottom Table UI-->
     </div>
-  </div>
 </div>
 <!-- Basic example -->
 
 <div mdbModal #basicModal="mdbModal" style="overflow-y: auto" class="modal fade" tabindex="-1" role="dialog"
-  aria-labelledby="myBasicModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fluid" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-          <span aria-hidden="true">×</span>
-        </button>
-        <h4 class="modal-title w-100" id="myModalLabel">PDF File</h4>
-      </div>
-      <div class="modal-body">
-        <pdf-viewer *ngIf="PDFsrc" [src]="PDFsrc" [render-text]="true" [autoresize]="true" style="display: block;"></pdf-viewer>
-      </div>
-      <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()"
-          mdbWavesEffect>Close</button>
-      </div>
+     aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fluid" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">PDF File</h4>
+            </div>
+            <div class="modal-body">
+                <pdf-viewer *ngIf="PDFsrc" [src]="PDFsrc" [render-text]="true" [autoresize]="true"
+                            style="display: block;"></pdf-viewer>
+            </div>
+            <div class="modal-footer">
+                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+                        (click)="basicModal.hide()"
+                        mdbWavesEffect>Close
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <swal
-  #errorSignCode
-  title="Mã đã được tạo"
-  text="Có vẻ đang có người dùng mã, bạn có muốn tạo mã ?"
-  type="warning"
-  [showCancelButton]="true"
-  [focusCancel]="true"
-  (confirm)="getReCode()"
- >
+    #errorSignCode
+    title="Mã đã được tạo"
+    text="Có vẻ đang có người dùng mã, bạn có muốn tạo mã ?"
+    type="warning"
+    [showCancelButton]="true"
+    [focusCancel]="true"
+    (confirm)="getReCode()"
+>
 </swal>

@@ -14,6 +14,25 @@ export class InvoiceListComponent implements OnInit {
     @ViewChild('basicModal') basicModal: any;
     @ViewChild('errorSignCode') private errorsignCodeSwal: SwalComponent;
 
+    _signCode: string;
+    data = new PageModel<Invoice>();
+    state = {
+        index: 1,
+        pageSize: 5,
+        enterprise: '',
+        pageNumbers: [],
+        pageSizeNumbers: [5, 10, 20, 50],
+        TaxNo: '',
+        monthYear: null,
+        month: null,
+        year: null,
+    };
+    config = {
+        format: 'MM/YYYY',
+        monthBtnFormat: 'MM',
+    };
+    PDFsrc = null;
+
     constructor(
         private readonly invoiceService: InvoiceService
     ) {
@@ -23,37 +42,41 @@ export class InvoiceListComponent implements OnInit {
         this.getData();
     }
 
-    _signCode: string;
-    data = new PageModel<Invoice>();
-    index: number = 1;
-    pageSize: number = 5;
-    pageNumbers: Array<Number>;
-    pageSizeNumbers: Number[] = [5, 10, 20, 50];
-    taxNoSearch: string = '';
-
-    monthSearch: number =  new Date().getMonth() +1;
-    yearSearch: number =  new Date().getFullYear();
-    PDFsrc = null;
-
     setPageSize(num: number) {
-        this.index = 1;
-        this.pageSize = num;
+        this.state.index = 1;
+        this.state.pageSize = num;
+        this.getData();
+    }
+
+    changeDate(date: any) {
+        if (date) {
+            this.state.month = date.substring(0, 2);
+            this.state.year = date.substring(3, 7);
+        } else {
+            this.state.month = null;
+            this.state.year = null;
+        }
         this.getData();
     }
 
     setIndex(num: number) {
-        this.index = num;
+        this.state.index = num;
         this.getData();
     }
 
     getData() {
-        this.invoiceService.getPageInvoices(this.index, this.pageSize, this.monthSearch, this.yearSearch, this.taxNoSearch)
+        const state = Object.assign({}, this.state);
+        delete state.pageSizeNumbers;
+        delete state.pageNumbers;
+        delete state.monthYear;
+        const urlString = this.parseUrlString(state);
+        this.invoiceService.getPageInvoices(urlString)
             .then(
                 (response: PageModel<Invoice>) => {
                     this.data = response;
-                    this.pageNumbers = new Array<Number>();
-                    for (var i = response.Left; i <= response.Right; i++) {
-                        this.pageNumbers.push(i);
+                    this.state.pageNumbers = new Array<Number>();
+                    for (let i = response.Left; i <= response.Right; i++) {
+                        this.state.pageNumbers.push(i);
                     }
                 }
             );
@@ -68,8 +91,8 @@ export class InvoiceListComponent implements OnInit {
         this.PDFsrc = null;
         this.invoiceService.getInvoicePDF(invoice.Id)
             .subscribe(res => {
-                var file = new Blob([res], {type: 'application/pdf'});
-                var fileURL = URL.createObjectURL(file);
+                const file = new Blob([res], {type: 'application/pdf'});
+                const fileURL = URL.createObjectURL(file);
                 this.PDFsrc = fileURL;
                 this.basicModal.show();
             });
@@ -128,6 +151,18 @@ export class InvoiceListComponent implements OnInit {
                     swal(this._signCode, 'Dán mã vào chương trình để kí', 'success');
                 }
             );
+    }
+
+    parseUrlString(data: any) {
+        let str = '?';
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                if (data[key] !== null && data[key] !== '' && data[key] !== undefined) {
+                    str += key + '=' + data[key] + '&';
+                }
+            }
+        }
+        return str.replace(/([&?])$/g, '');
     }
 
 }

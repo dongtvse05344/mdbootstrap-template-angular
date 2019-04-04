@@ -35,10 +35,10 @@ export class InvoiceService {
 
     ).toPromise();
   }
-  getPageInvoices(index:number, pageSize:number,month:number, year:number, taxNo:string)
+  getPageInvoices(urlString: string)
   {
     return this.httpClient.get<PageModel<Invoice>>(
-      `${environment.endPoint}${environment.apiPaths.invoice.main}?index=${index}&pageSize=${pageSize}&month=${month}&year=${year}&taxNo=${taxNo}`,
+      `${environment.endPoint}${environment.apiPaths.invoice.main}${urlString}`,
     ).toPromise();
   }
 

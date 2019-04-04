@@ -1,22 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
-.select-dropdown li span{
-    color: black!important;
+.select-dropdown li span {
+  color: black !important;
 }
 
 
 // scrollbar
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: rgba(91, 155, 213, 0.3);
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(91, 155, 213, 0.5);
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(91, 155, 213);
-  }
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(91, 155, 213, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(91, 155, 213, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(91, 155, 213);
+}
+
+dp-month-calendar {
+  display: inline-block
+}
+
+dp-month-calendar .dp-month-calendar-container {
+  background: #fff
+}
+
+dp-month-calendar .dp-calendar-wrapper {
+  border: 1px solid #000
+}
+
+dp-month-calendar .dp-calendar-month {
+  box-sizing: border-box;
+  width: 52.5px;
+  height: 52.5px;
+  cursor: pointer
+}
+
+dp-month-calendar .dp-calendar-month.dp-selected {
+  background: #106cc8;
+  color: #fff
+}
+
+dp-month-calendar.dp-material .dp-calendar-weekday {
+  height: 25px;
+  width: 30px;
+  line-height: 25px;
+  background: #e0e0e0;
+  border: 1px solid #e0e0e0
+}
+
+dp-month-calendar.dp-material .dp-calendar-wrapper {
+  border: 1px solid #e0e0e0
+}
+
+dp-month-calendar.dp-material .dp-calendar-month {
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 50%;
+  border: none;
+  outline: 0
+}
+
+dp-month-calendar.dp-material .dp-calendar-month:hover {
+  background: #e0e0e0
+}
+
+dp-month-calendar.dp-material .dp-selected {
+  background: #106cc8;
+  color: #fff
+}
+
+dp-month-calendar.dp-material .dp-selected:hover {
+  background: #106cc8
+}
+
+dp-month-calendar.dp-material .dp-current-month {
+  border: 1px solid #106cc8
+}

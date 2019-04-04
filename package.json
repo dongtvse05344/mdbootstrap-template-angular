@@ -37,6 +37,7 @@
     "jarallax": "^1.10.3",
     "ng-input-currency": "^0.9.10",
     "ng-uikit-pro-standard": "file:ng-uikit-pro-standard-7.1.1.tgz",
+    "ng2-date-picker": "^2.11.0",
     "ng2-pdf-viewer": "^5.2.3",
     "ngx-currency": "^1.5.1",
     "ngx-facebook": "2.4.0",

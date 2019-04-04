@@ -10,6 +10,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { InvoiceListComponent } from './invoice-component/invoice-list/invoice-list.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { InvoiceEditComponent } from './invoice-component/invoice-edit/invoice-edit.component';
+import {DpDatePickerModule} from 'ng2-date-picker';
 
 @NgModule({
   declarations: [AccountingLayoutComponent, InvoiceCreateComponent, InvoiceListComponent, InvoiceEditComponent],
@@ -21,6 +22,7 @@ import { InvoiceEditComponent } from './invoice-component/invoice-edit/invoice-e
     FormsModule,
     TextMaskModule,
     ReactiveFormsModule,
+    DpDatePickerModule,
     SweetAlert2Module.forRoot({
       buttonsStyling: false,
       customClass: 'modal-content',
