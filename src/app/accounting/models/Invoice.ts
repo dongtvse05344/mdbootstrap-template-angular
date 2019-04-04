@@ -5,6 +5,7 @@ export class Invoice{
     Type: number;
     Date: string;
     DueDate: string;
+    DateCreated:string;
     Number: string;
     Name: string;
     Enterprise: string;

@@ -35,11 +35,11 @@ export const environment = {
         },
         {
             value: 'TM',
-            label: 'Thanh toán bằng tiền mặt'
+            label: 'Tiền mặt'
         },
         {
             value: 'CK',
-            label: 'Thanh toán bằng tiền mặt'
+            label: 'Chuyển khoản'
         },
     ],
     apiPaths: {
