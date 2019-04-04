@@ -4,6 +4,9 @@ import { AccountingLayoutComponent } from "./layout-component/accounting-layout/
 import { InvoiceCreateComponent } from "./invoice-component/invoice-create/invoice-create.component";
 import { InvoiceListComponent } from "./invoice-component/invoice-list/invoice-list.component";
 import { InvoiceEditComponent } from "./invoice-component/invoice-edit/invoice-edit.component";
+import { ProductListComponent } from "../manager/product-component/product-list/product-list.component";
+import { ProductCreateComponent } from "../manager/product-component/product-create/product-create.component";
+import { ProductEditComponent } from "../manager/product-component/product-edit/product-edit.component";
 
 const routes: Routes = [
 
@@ -12,7 +15,11 @@ const routes: Routes = [
             {path: '',redirectTo: 'invoice', pathMatch: "full"},
             {path: 'invoice',component: InvoiceListComponent},
             {path: 'invoice/create',component: InvoiceCreateComponent},
-            {path: 'invoice/:id/edit', component: InvoiceEditComponent}
+            {path: 'invoice/:id/edit', component: InvoiceEditComponent},
+            { path: 'product', component: ProductListComponent },
+            { path: 'product/create', component: ProductCreateComponent },
+            { path: 'product/:id/edit', component: ProductEditComponent },
+
         ]
     }
 ]
