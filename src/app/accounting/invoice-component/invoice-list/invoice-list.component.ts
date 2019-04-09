@@ -19,7 +19,7 @@ export class InvoiceListComponent implements OnInit {
     state = {
         index: 1,
         pageSize: 5,
-        enterprise: '',
+        companyName: '',
         pageNumbers: [],
         pageSizeNumbers: [5, 10, 20, 50],
         TaxNo: '',
