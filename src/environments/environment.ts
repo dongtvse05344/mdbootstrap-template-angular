@@ -53,11 +53,13 @@ export const environment = {
             main: 'api/Company',
             toggleActive: 'ToggleActive',
             enterprise: '/GetEnterprise',
-            staff: 'Staff'
+            staff: 'Staff',
+            company: 'GetCompany'
         },
         account: {
             main: 'api/Account',
-            admin: 'admin'
+            admin: 'admin',
+            ChangePassword: 'ChangePassword'
         },
         template: {
             main: 'api/Template',

@@ -119,22 +119,22 @@
 
     <navlinks>
       <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link waves-light" mdbWavesEffect>
             <i class="fa fa-envelope"></i>
             <span class="clearfix d-none d-sm-inline-block">Contact</span>
           </a>
-        </li>
+        </li>-->
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>
-            <i class="fa fa-user"></i>
-            <span class="clearfix d-none d-sm-inline-block">Account</span>
+          <a [routerLink]="['password']" class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-lock"></i>
+            <span class="clearfix d-none d-sm-inline-block">Đổi mật khẩu</span>
           </a>
-        </li>
+        </li> 
         <li class="nav-item">
           <a class="nav-link waves-light" mdbWavesEffect (click)="logOut()">
             <i class="fa fa-sign-out"></i>
-            <span class="clearfix d-none d-sm-inline-block">Log Out</span>
+            <span class="clearfix d-none d-sm-inline-block">Đăng xuất</span>
           </a>
         </li>
 

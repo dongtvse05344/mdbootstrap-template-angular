@@ -14,9 +14,11 @@ import { ProductEditComponent } from './product-component/product-edit/product-e
 import { TextMaskModule } from 'angular2-text-mask';
 import { TemplateEditComponent } from './template-component/template-edit/template-edit.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { AccountEditComponent } from './account-component/account-edit/account-edit.component';
+import { AccountCreateComponent } from './account-component/account-create/account-create.component';
 
 @NgModule({
-  declarations: [ManagerLayoutComponent, AccountListComponent, TemplateListComponent, TemplateCreateComponent, ProductListComponent, ProductCreateComponent, ProductEditComponent, TemplateEditComponent],
+  declarations: [ManagerLayoutComponent, AccountListComponent, TemplateListComponent, TemplateCreateComponent, ProductListComponent, ProductCreateComponent, ProductEditComponent, TemplateEditComponent, AccountEditComponent, AccountCreateComponent],
   imports: [
     CommonModule,
     ManagerRoutingModule,

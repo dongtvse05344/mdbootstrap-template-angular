@@ -1,38 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AccountService } from '../../services/account.service';
-import { CompanyService } from '../../services/company.service';
-import { Staff } from '../../models/staff';
-import { Company } from '../../models/company';
-import { environment } from 'src/environments/environment';
-import { Location } from '@angular/common';
+import { AccountService } from 'src/app/admin/services/account.service';
+import { CompanyService } from 'src/app/admin/services/company.service';
 import { ToastService } from 'ng-uikit-pro-standard';
+import { Company } from 'src/app/admin/models/company';
+import { environment } from 'src/environments/environment';
+import { Staff } from 'src/app/admin/models/staff';
+import { Location } from '@angular/common';
+
 
 @Component({
-  selector: 'app-staff-edit',
-  templateUrl: './staff-edit.component.html',
-  styleUrls: ['./staff-edit.component.scss']
+  selector: 'app-manager-account-edit',
+  templateUrl: './account-edit.component.html',
+  styleUrls: ['./account-edit.component.scss'],
 })
-export class StaffEditComponent implements OnInit {
+export class AccountEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
     private accountService: AccountService,
     private readonly companyService: CompanyService,
     private location: Location,
-    private toastrService: ToastService 
-
+    private toastrService: ToastService
   ) { }
 
-  staff: Staff = new Staff();
   company: Company = new Company();
+  staff: Staff = new Staff();
+
   roles: Array<{ text: string; value: string, checked: boolean }> = new Array<{ text: string; value: string, checked: boolean }>();
-
-
   ngOnInit() {
     this.route.params.subscribe(params => {
-      var companyId = params['id'];
-      var staffId = params['staffId'];
+      var staffId = params['id'];
       this.accountService.GetStaff(staffId)
         .then(
           (response: Staff) => {
@@ -40,23 +38,13 @@ export class StaffEditComponent implements OnInit {
             this.initRoles();
           }
         )
-      this.companyService.GetCompany(companyId)
+      this.companyService.GetCompany_()
         .then(
           (response: Company) => {
             this.company = response;
           }
         )
     });
-  }
-
-  isRoleChecked(role: string): boolean {
-    var result = false;
-    this.staff.Roles.forEach(e => {
-      if (e == role) {
-        result = true;
-      }
-    });
-    return result;
   }
 
   initRoles() {
@@ -91,11 +79,11 @@ export class StaffEditComponent implements OnInit {
     );
   }
 
-  getRoleChecked(): Array<String> {
-    var result = new Array<String>();
-    this.roles.forEach(element => {
-      if (element.checked) {
-        result.push(element.value);
+  isRoleChecked(role: string): boolean {
+    var result = false;
+    this.staff.Roles.forEach(e => {
+      if (e == role) {
+        result = true;
       }
     });
     return result;
@@ -117,14 +105,24 @@ export class StaffEditComponent implements OnInit {
       )
   }
 
-  goHome() {
-    // this.router.navigate(["../"]);
-    this.location.back();
-  }
-
   opacityShowSuccess(mess : string) {
     const options = { toastClass: 'opacity' };
     this.toastrService.success(mess, 'Success message', options);
   }
+  getRoleChecked(): Array<String> {
+    var result = new Array<String>();
+    this.roles.forEach(element => {
+      if (element.checked) {
+        result.push(element.value);
+      }
+    });
+    return result;
+  }
 
+  goHome() {
+    // this.router.navigate(["../"]);
+    this.location.back();
+  }
 }
+
+

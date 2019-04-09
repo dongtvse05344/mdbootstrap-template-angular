@@ -7,6 +7,7 @@ import { InvoiceEditComponent } from "./invoice-component/invoice-edit/invoice-e
 import { ProductListComponent } from "../manager/product-component/product-list/product-list.component";
 import { ProductCreateComponent } from "../manager/product-component/product-create/product-create.component";
 import { ProductEditComponent } from "../manager/product-component/product-edit/product-edit.component";
+import { AccountPasswordComponent } from "./account-component/account-password/account-password.component";
 
 const routes: Routes = [
 
@@ -19,6 +20,7 @@ const routes: Routes = [
             { path: 'product', component: ProductListComponent },
             { path: 'product/create', component: ProductCreateComponent },
             { path: 'product/:id/edit', component: ProductEditComponent },
+            { path: 'password', component: AccountPasswordComponent },
 
         ]
     }

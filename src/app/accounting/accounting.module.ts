@@ -11,9 +11,10 @@ import { InvoiceListComponent } from './invoice-component/invoice-list/invoice-l
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { InvoiceEditComponent } from './invoice-component/invoice-edit/invoice-edit.component';
 import {DpDatePickerModule} from 'ng2-date-picker';
+import { AccountPasswordComponent } from './account-component/account-password/account-password.component';
 
 @NgModule({
-  declarations: [AccountingLayoutComponent, InvoiceCreateComponent, InvoiceListComponent, InvoiceEditComponent],
+  declarations: [AccountingLayoutComponent, InvoiceCreateComponent, InvoiceListComponent, InvoiceEditComponent, AccountPasswordComponent],
   imports: [
     CommonModule,
     AccountinRoutingModule,

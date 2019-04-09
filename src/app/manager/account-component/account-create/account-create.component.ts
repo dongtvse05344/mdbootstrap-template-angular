@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../../services/account.service';
-import { CompanyService } from '../../services/company.service';
-import { ActivatedRoute } from '@angular/router';
-import { Staff } from '../../models/staff';
-import { Company } from '../../models/company';
-import { Location } from '@angular/common';
-import { environment } from 'src/environments/environment';
 import { ToastService } from 'ng-uikit-pro-standard';
+import { environment } from 'src/environments/environment';
+import { Location } from '@angular/common';
+import { CompanyService } from '../../../admin/services/company.service';
+import { ActivatedRoute } from '@angular/router';
+import { AccountService } from '../../../admin/services/account.service';
+import { Staff } from 'src/app/admin/models/staff';
+import { Company } from 'src/app/admin/models/company';
 
 @Component({
-  selector: 'app-staff-create',
-  templateUrl: './staff-create.component.html',
-  styleUrls: ['./staff-create.component.scss']
+  selector: 'app-account-create',
+  templateUrl: './account-create.component.html',
+  styleUrls: ['./account-create.component.scss']
 })
-export class StaffCreateComponent implements OnInit {
+export class AccountCreateComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private readonly companyService: CompanyService,
+    private readonly companyService: CompanyService, 
     private route: ActivatedRoute,
-    private location: Location,
+    private location : Location,
     private toastrService: ToastService
 
   ) { }
@@ -27,13 +27,12 @@ export class StaffCreateComponent implements OnInit {
   staff: Staff = new Staff();
   company: Company = new Company();
   confirmPassword: string = "";
-  roles: Array<{ text: string; value: string, checked: boolean }> = new Array<{ text: string; value: string, checked: boolean }>();
+  roles: Array<{ text : string; value: string , checked : boolean }> = new Array<{ text: string; value: string , checked : boolean  }>();
 
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      var id = params['id'];
-      this.companyService.GetCompany(id)
+      this.companyService.GetCompany_()
         .then(
           (response: Company) => {
             this.company = response
@@ -47,7 +46,12 @@ export class StaffCreateComponent implements OnInit {
           }
         );
     });
+    this.initRoles();
+  }
 
+
+
+  initRoles() {
     this.roles.push(
       {
         text: environment.RoleName.RoleManager.text,
@@ -66,26 +70,17 @@ export class StaffCreateComponent implements OnInit {
       {
         text: environment.RoleName.RoleLiabilityAccountant.text,
         value: environment.RoleName.RoleLiabilityAccountant.value,
-        checked: false
+        checked: true
       }
     );
+
     this.roles.push(
       {
         text: environment.RoleName.RolePayableAccountant.text,
         value: environment.RoleName.RolePayableAccountant.value,
-        checked: false
+        checked: true
       }
     );
-  }
-
-  getRoleChecked(): Array<String> {
-    var result = new Array<String>();
-    this.roles.forEach(element => {
-      if (element.checked) {
-        result.push(element.value);
-      }
-    });
-    return result;
   }
 
   create() {
@@ -105,6 +100,16 @@ export class StaffCreateComponent implements OnInit {
       )
   }
 
+  getRoleChecked(): Array<String> {
+    var result = new Array<String>();
+    this.roles.forEach(element => {
+      if (element.checked) {
+        result.push(element.value);
+      }
+    });
+    return result;
+  }
+
   goHome() {
     // this.router.navigate(["../"]);
     this.location.back();
@@ -119,4 +124,5 @@ export class StaffCreateComponent implements OnInit {
     const options = { toastClass: 'opacity' };
     this.toastrService.error(mess, 'Error message', options);
   }
+
 }

@@ -8,6 +8,8 @@ import { ProductListComponent } from "./product-component/product-list/product-l
 import { ProductCreateComponent } from "./product-component/product-create/product-create.component";
 import { ProductEditComponent } from "./product-component/product-edit/product-edit.component";
 import { TemplateEditComponent } from "./template-component/template-edit/template-edit.component";
+import { AccountEditComponent } from "./account-component/account-edit/account-edit.component";
+import { AccountCreateComponent } from "./account-component/account-create/account-create.component";
 
 const routes: Routes = [
     {
@@ -18,6 +20,10 @@ const routes: Routes = [
         children: [
             { path: '', redirectTo: 'account', pathMatch: 'full' },
             { path: 'account', component: AccountListComponent },
+            { path: 'account/create', component: AccountCreateComponent },
+
+            { path: 'account/updateStaff/:id', component: AccountEditComponent },
+
             { path: 'template', component: TemplateListComponent },
             { path: 'template/create', component: TemplateCreateComponent },
             { path: 'template/:id/edit', component: TemplateEditComponent },

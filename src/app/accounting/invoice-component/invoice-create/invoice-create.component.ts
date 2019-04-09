@@ -99,7 +99,7 @@ export class InvoiceCreateComponent implements OnInit {
             Note: new FormControl(''),
             TemplateId: new FormControl('', Validators.required),
             Type: new FormControl(0),
-            invoiceItemCMs: this.fb.array([])
+            invoiceItemCMs: this.fb.array([],Validators.required)
         });
     }
 
@@ -183,7 +183,7 @@ export class InvoiceCreateComponent implements OnInit {
         op.removeAt(item);
         this.updateAmount();
     }
-
+ 
     create() {
         console.log(this.form);
         if (this.form.valid) {

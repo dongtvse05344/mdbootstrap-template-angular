@@ -5,10 +5,25 @@
       <h4 class="text-center">Tạo tài khoản cho <b>{{company.Name}}</b></h4>
       <div class="md-form mt-5">
         <i class="fa fa-user-plus prefix"></i>
-        <input mdbInputDirective type="text" id="form3" class="form-control" readonly="true" [(ngModel)]="staff.UserName">
+        <input mdbInputDirective type="text" id="form3" class="form-control" [(ngModel)]="staff.UserName">
         <label for="form2">Tên tài khoản</label>
       </div>
-      
+      <div class="md-form ">
+        <i class="fa fa-key prefix"></i>
+        <input mdbInputDirective type="password" id="form2" class="form-control" [(ngModel)]="staff.Password">
+        <label for="form2">Mật Khẩu</label>
+      </div>
+      <div class="md-form ">
+        <i class="fa fa-unlock prefix"></i>
+        <input mdbInputDirective type="password" id="form2" class="form-control" [(ngModel)]="confirmPassword" required #_confirmPassword="ngModel">
+        <label for="form2">Xác Nhận Mật Khẩu</label>
+        <span *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="field-validation-error">
+          Confirm Password không được để trống
+        </span>
+        <span *ngIf="(confirmPassword != staff.Password ) && (_confirmPassword.dirty || _confirmPassword.touched)" class="field-validation-error">
+          Confirm Password không khớp.
+        </span>
+      </div>
       <div class="md-form ">
         <i class="fa fa-user prefix"></i>
         <input mdbInputDirective type="text" id="form2" class="form-control"   [(ngModel)]="staff.Name">
@@ -39,8 +54,8 @@
           </div>
         </div>
       </div>
-      <button (click)="update()" _ngcontent-c17="" color="default" mdbbtn="" mdbwaveseffect="" type="button" class="btn btn-default" 
-        ng-reflect-color="default">Sửa Tài Khoản <mdb-icon _ngcontent-c17="" class="ml-1" icon="magic" ng-reflect-icon="magic" ng-reflect-class="ml-1"><i class="fa fa-magic fa- ml-1 prefix"></i></mdb-icon></button>
+      <button (click)="create()" _ngcontent-c17="" color="default" mdbbtn="" mdbwaveseffect="" type="button" class="btn btn-default" 
+        ng-reflect-color="default">Tạo Tài Khoản <mdb-icon _ngcontent-c17="" class="ml-1" icon="magic" ng-reflect-icon="magic" ng-reflect-class="ml-1"><i class="fa fa-magic fa- ml-1 prefix"></i></mdb-icon></button>
     </div>
   </div>
 </div>

@@ -23,6 +23,11 @@ export class CompanyService {
       `${environment.endPoint}${environment.apiPaths.company.main}/${id}`,
     ).toPromise();
   }
+  GetCompany_() : Promise<Company>{
+    return this.httpClient.get<Company>(
+      `${environment.endPoint}${environment.apiPaths.company.main}/${environment.apiPaths.company.company}`,
+    ).toPromise();
+  }
   ToggleId(id : string): Promise<any>{
     return this.httpClient.put<any>(
       `${environment.endPoint}${environment.apiPaths.company.main}/${id}/${environment.apiPaths.company.toggleActive}`,
