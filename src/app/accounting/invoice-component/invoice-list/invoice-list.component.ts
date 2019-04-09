@@ -23,13 +23,11 @@ export class InvoiceListComponent implements OnInit {
         pageNumbers: [],
         pageSizeNumbers: [5, 10, 20, 50],
         TaxNo: '',
-        monthYear: null,
-        month: null,
-        year: null,
+        fromDate: null,
+        toDate: null
     };
     config = {
-        format: 'MM/YYYY',
-        monthBtnFormat: 'MM',
+        dateFormat: 'dd/mm/yyyy',
     };
     PDFsrc = null;
 
@@ -48,17 +46,6 @@ export class InvoiceListComponent implements OnInit {
         this.getData();
     }
 
-    changeDate(date: any) {
-        if (date) {
-            this.state.month = date.substring(0, 2);
-            this.state.year = date.substring(3, 7);
-        } else {
-            this.state.month = null;
-            this.state.year = null;
-        }
-        this.getData();
-    }
-
     setIndex(num: number) {
         this.state.index = num;
         this.getData();
@@ -68,7 +55,6 @@ export class InvoiceListComponent implements OnInit {
         const state = Object.assign({}, this.state);
         delete state.pageSizeNumbers;
         delete state.pageNumbers;
-        delete state.monthYear;
         const urlString = this.parseUrlString(state);
         this.invoiceService.getPageInvoices(urlString)
             .then(
@@ -80,6 +66,11 @@ export class InvoiceListComponent implements OnInit {
                     }
                 }
             );
+    }
+
+    getDate(date) {
+        console.log(date);
+        return date;
     }
 
     search() {

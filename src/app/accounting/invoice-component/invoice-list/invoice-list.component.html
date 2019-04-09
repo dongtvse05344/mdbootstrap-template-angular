@@ -12,12 +12,16 @@
     <!--Second column-->
     <div class="col-md-3">
         <div class="md-form">
-            <input mdbInputDirective type="text" id="form42" class="form-control"
-                   [dpDayPicker]="config"
-                   theme="dp-material" mode="month"
-                   [ngModel]="state.monthYear"
-                   (ngModelChange)="changeDate($event)">
-            <label for="form42" class="">Tháng / Năm</label>
+            <mdb-date-picker [options]="config" [placeholder]="'Ngày bắt đầu'" [ngModel]="state.fromDate"
+                             (ngModelChange)="state.fromDate = $event; getData()">
+            </mdb-date-picker>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="md-form">
+            <mdb-date-picker [options]="config" [placeholder]="'Ngày kết thúc'" [ngModel]="state.toDate"
+                             (ngModelChange)="state.toDate = $event; getData()">
+            </mdb-date-picker>
         </div>
     </div>
 
