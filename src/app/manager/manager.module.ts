@@ -16,9 +16,11 @@ import { TemplateEditComponent } from './template-component/template-edit/templa
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AccountEditComponent } from './account-component/account-edit/account-edit.component';
 import { AccountCreateComponent } from './account-component/account-create/account-create.component';
+import { PasswordChangeComponent } from './account-component/password-change/password-change.component';
+import { CompanyInfoComponent } from './company-component/company-info/company-info.component';
 
 @NgModule({
-  declarations: [ManagerLayoutComponent, AccountListComponent, TemplateListComponent, TemplateCreateComponent, ProductListComponent, ProductCreateComponent, ProductEditComponent, TemplateEditComponent, AccountEditComponent, AccountCreateComponent],
+  declarations: [ManagerLayoutComponent, AccountListComponent, TemplateListComponent, TemplateCreateComponent, ProductListComponent, ProductCreateComponent, ProductEditComponent, TemplateEditComponent, AccountEditComponent, AccountCreateComponent, PasswordChangeComponent, CompanyInfoComponent],
   imports: [
     CommonModule,
     ManagerRoutingModule,

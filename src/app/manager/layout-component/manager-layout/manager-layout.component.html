@@ -135,15 +135,15 @@
     <navlinks>
       <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav">
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>
-            <i class="fa fa-envelope"></i>
-            <span class="clearfix d-none d-sm-inline-block">Contact</span>
+          <a [routerLink]="['company']" class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-inbox"></i>
+            <span class="clearfix d-none d-sm-inline-block">Thông tin doanh nghiệp</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>
-            <i class="fa fa-user"></i>
-            <span class="clearfix d-none d-sm-inline-block">Account</span>
+          <a [routerLink]="['account/password']" class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-lock"></i>
+            <span class="clearfix d-none d-sm-inline-block">Đổi mật khẩu</span>
           </a>
         </li>
         <li class="nav-item">

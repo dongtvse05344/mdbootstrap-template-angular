@@ -6,6 +6,7 @@ import { Company } from 'src/app/admin/models/company';
 import { Router } from '@angular/router';
 import { PageModel } from 'src/app/core/models/PageModel';
 import { Staff } from 'src/app/admin/models/staff';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-account-list',
@@ -19,8 +20,9 @@ export class AccountListComponent implements OnInit {
     private accountService: AccountService,
     private router: Router,
     private authService: AuthService,
-
   ) { }
+  currentUsername = '';
+  newPassword = '';
   username = this.authService.getUserName();
   company: Company = new Company();
   data: PageModel<Staff> = new PageModel<Staff>();
@@ -113,5 +115,19 @@ export class AccountListComponent implements OnInit {
   logOut() {
     localStorage.clear();
     this.router.navigate([""]);
+  }
+  resetPassword()
+  {
+    this.accountService.resetPassword(this.currentUsername,this.newPassword)
+      .then(
+        ()=>{
+          this.opacityShowSuccess("Reset mật khẩu thành công");
+        }
+      )
+      .catch(
+        (e)=>{
+          console.error(e);
+        }
+      )
   }
 }

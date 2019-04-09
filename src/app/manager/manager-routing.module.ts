@@ -10,6 +10,8 @@ import { ProductEditComponent } from "./product-component/product-edit/product-e
 import { TemplateEditComponent } from "./template-component/template-edit/template-edit.component";
 import { AccountEditComponent } from "./account-component/account-edit/account-edit.component";
 import { AccountCreateComponent } from "./account-component/account-create/account-create.component";
+import { PasswordChangeComponent } from "./account-component/password-change/password-change.component";
+import { CompanyInfoComponent } from "./company-component/company-info/company-info.component";
 
 const routes: Routes = [
     {
@@ -21,8 +23,9 @@ const routes: Routes = [
             { path: '', redirectTo: 'account', pathMatch: 'full' },
             { path: 'account', component: AccountListComponent },
             { path: 'account/create', component: AccountCreateComponent },
-
+            { path: 'account/password', component: PasswordChangeComponent },
             { path: 'account/updateStaff/:id', component: AccountEditComponent },
+            { path: 'company', component: CompanyInfoComponent },
 
             { path: 'template', component: TemplateListComponent },
             { path: 'template/create', component: TemplateCreateComponent },

@@ -58,4 +58,14 @@ export class AccountService {
       }
     ).toPromise();
   }
+
+  resetPassword(username:string, newpassword:string)
+  {
+    return this.httpClient.post(
+      `${environment.endPoint}${environment.apiPaths.account.main}/${environment.apiPaths.account.ResetPassword}`,{
+        'UserName':username,
+        'NewPassword': newpassword
+      }
+    ).toPromise();
+  }
 }

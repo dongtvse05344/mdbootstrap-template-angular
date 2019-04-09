@@ -59,7 +59,9 @@ export const environment = {
         account: {
             main: 'api/Account',
             admin: 'admin',
-            ChangePassword: 'ChangePassword'
+            ChangePassword: 'ChangePassword',
+            ResetPassword: 'ResetPassword'
+
         },
         template: {
             main: 'api/Template',

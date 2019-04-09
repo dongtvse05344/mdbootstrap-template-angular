@@ -1,16 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { VALID_ELEMENTS } from '@angular/core/src/sanitization/html_sanitizer';
-import { AccountService } from '../../services/account.service';
 import { SwalComponent } from '@toverux/ngx-sweetalert2';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AccountService } from 'src/app/accounting/services/account.service';
 
 @Component({
-  selector: 'app-account-password',
-  templateUrl: './account-password.component.html',
-  styleUrls: ['./account-password.component.scss']
+  selector: 'app-password-change',
+  templateUrl: './password-change.component.html',
+  styleUrls: ['./password-change.component.scss']
 })
-export class AccountPasswordComponent implements OnInit {
+export class PasswordChangeComponent implements OnInit {
   @ViewChild('errorSwal') private errorSwal: SwalComponent;
 
   constructor(
@@ -60,4 +59,3 @@ export class AccountPasswordComponent implements OnInit {
     this.router.navigate(['..'], { relativeTo: this.route });
   }
 }
-

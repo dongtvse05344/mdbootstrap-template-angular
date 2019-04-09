@@ -80,7 +80,7 @@
                   <i mdbTooltip="Khóa doanh nghiệp" *ngIf="item.IsActive == true" class="fa fa-toggle-on"></i>
                   <i mdbTooltip="Khôi phục doanh nghiệp" *ngIf="item.IsActive == false" class="fa fa-toggle-off"></i>
                 </button>
-                <button class="btn-md" mdbTooltip="Đổi mật khẩu" mdbBtn type="button" color="success" rounded="true"
+                <button class="btn-md" (click)="currentUsername = item.UserName;basicModal.show()" mdbTooltip="Reset mật khẩu" mdbBtn type="button" color="success" rounded="true"
                   outline="true" mdbWavesEffect>
                   <i class="fa fa-lock"></i>
                 </button>
@@ -158,3 +158,32 @@
   </div>
 </div>
 <!-- Basic example -->
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Reset mật khẩu</h4>
+      </div>
+      <div class="modal-body">
+        <div class="md-form ">
+          <i class="fa fa-user prefix"></i>
+          <input mdbInputDirective readonly="true"  type="text" id="form2" class="form-control" [(ngModel)]="currentUsername">
+          <label for="form2">Tên đăng nhập</label>
+        </div>
+        <div class="md-form ">
+          <i class="fa fa-lock prefix"></i>
+          <input mdbInputDirective type="text" id="form2" class="form-control" [(ngModel)]="newPassword">
+          <label for="form2">Mật khẩu</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Hủy</button>
+        <button type="button" mdbBtn color="primary" (click)="resetPassword()" class="relative waves-light" mdbWavesEffect>Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>

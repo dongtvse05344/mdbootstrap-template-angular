@@ -17,5 +17,7 @@ export class AccountService {
       `${environment.endPoint}${environment.apiPaths.account.main}/${environment.apiPaths.account.ChangePassword}`, model
     ).toPromise();
   }
+
+  
   
 }
