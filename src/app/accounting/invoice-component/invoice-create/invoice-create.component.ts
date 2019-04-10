@@ -84,7 +84,7 @@ export class InvoiceCreateComponent implements OnInit {
             Address: new FormControl('', Validators.required),
             Tel: new FormControl(''),
             Fax: new FormControl(''),
-            Mail: new FormControl(''),
+            Email: new FormControl(''),
             Bank: new FormControl(''),
             BankAccountNumber: new FormControl(''),
             PaymentMethod: new FormControl(environment.typeOfPayments[0].value, Validators.required),
@@ -94,7 +94,7 @@ export class InvoiceCreateComponent implements OnInit {
             VATAmount: new FormControl(0),
             Total: new FormControl(0),
             AmountInWords: new FormControl(),
-            DueDate: new FormControl(''),
+            DueDate: new FormControl(this.getDate(new Date()), Validators.required),
             Date: new FormControl(this.getDate(new Date()), Validators.required),
             Note: new FormControl(''),
             TemplateId: new FormControl('', Validators.required),
@@ -126,11 +126,28 @@ export class InvoiceCreateComponent implements OnInit {
             .then(
                 (response: Company) => {
                     this.form.patchValue({
-                        Enterprise: response.Name
+                        Enterprise: response.Enterprise
                     });
                     this.form.patchValue({
                         Address: response.Address
                     });
+                    this.form.patchValue({
+                        Bank: response.Bank
+                    });
+                    this.form.patchValue({
+                        BankAccountNumber: response.BankAccountNumber
+                    });
+                    this.form.patchValue({
+                        Tel: response.Tel
+                    });
+                    this.form.patchValue({
+                        Fax: response.Fax
+                    });
+                    
+                    this.form.patchValue({
+                        Email: response.Email
+                    })
+
                 }
             );
     }

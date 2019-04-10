@@ -57,7 +57,7 @@ export class CompanyService {
 
   GetMST(taxNo : string) : Promise<Company>{
     return this.httpClient.get<Company>(
-      `${environment.endPoint}${environment.apiPaths.company.main}/${environment.apiPaths.company.enterprise}?taxNo=${taxNo}`
+      `${environment.endPoint}${environment.apiPaths.customer.main}/${environment.apiPaths.customer.enterprise}?taxNo=${taxNo}`
     ).toPromise();
   }
 }

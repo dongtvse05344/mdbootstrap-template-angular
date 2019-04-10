@@ -56,6 +56,10 @@ export const environment = {
             staff: 'Staff',
             company: 'GetCompany'
         },
+        customer: {
+            main: 'api/Customer',
+            enterprise: '/GetEnterprise',
+        },
         account: {
             main: 'api/Account',
             admin: 'admin',

@@ -1,5 +1,6 @@
 export class Company{
     Id : string;
+    Enterprise: string;
     TaxNo : string;
     Name : string;
     Address : string;
@@ -8,7 +9,7 @@ export class Company{
     Website : string;
     Fax : string;
     Bank : string;
-    BankAcountNumber : string;
+    BankAccountNumber : string;
     IsActive : boolean;
     CodeGuid : string;
 }
