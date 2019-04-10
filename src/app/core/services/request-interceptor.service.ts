@@ -6,6 +6,7 @@ import { map, finalize } from 'rxjs/operators';
 import 'rxjs/add/operator/do';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
+import { LoaderService } from './loader.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,10 +16,15 @@ export class RequestInterceptorService implements HttpInterceptor {
   constructor(
     private globalService: GlobalService,
     private authGuardService: AuthService,
-    private router: Router
+    private router: Router,
+    private loaderService: LoaderService
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
+    this.showLoader();
+
+
     this.globalService.requestEvent.emit(0);
     const token = this.authGuardService.getToken();
     request = token ? request.clone(
@@ -48,8 +54,20 @@ export class RequestInterceptorService implements HttpInterceptor {
         }),
         finalize(() => {
           this.globalService.requestEvent.emit(100);
+          this.onEnd();
         })
       );
+  }
+
+  private onEnd(): void {
+    this.hideLoader();
+  }
+
+  private showLoader(): void {
+    this.loaderService.show();
+  }
+  private hideLoader(): void {
+    this.loaderService.hide();
   }
 
 }

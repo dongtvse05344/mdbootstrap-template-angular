@@ -19,10 +19,12 @@ import { RequestInterceptorService } from './core/services/request-interceptor.s
 
 import {NgxMaskModule} from 'ngx-mask'
 import { NgxCurrencyModule } from 'ngx-currency';
+import { LoaderComponent } from './core/components/loader/loader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    LoaderComponent,
+    AppComponent,
   ],
   imports: [
     HttpClientModule,

@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
       )
       .catch(error => {
         this.globalService.isLogin = false;
-        this.loginFailed = "Sai tên đăng nhập và mật khẩu";
+        this.loginFailed = "Sai tên đăng nhập hoặc mật khẩu";
       });
   }
   resetLoginFailed() {
