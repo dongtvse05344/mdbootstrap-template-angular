@@ -1,4 +1,4 @@
-export class Company{
+export class Customer{
     Id : string;
     Enterprise: string;
     TaxNo : string;

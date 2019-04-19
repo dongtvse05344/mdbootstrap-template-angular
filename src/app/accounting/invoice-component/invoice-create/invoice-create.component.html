@@ -60,11 +60,34 @@
         <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="Fax">
         <label for="form2">Fax </label>
       </div>
-      <div class="md-form form-group">
-        <i class="fa fa-envelope prefix"></i>
-        <input mdbInputDirective type="text" id="form3" class="form-control" formControlName="Email">
-        <label for="form2">Email </label>
-      </div>
+      <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList>
+            <mat-chip
+              *ngFor="let fruit of fruits"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="remove(fruit)">
+              {{fruit}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input
+              class="form-control"
+              placeholder="Email"
+              #fruitInput
+              [formControl]="Email"
+              [matAutocomplete]="auto"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur"
+              (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">
+              {{fruit}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
       <div class="mx-auto ">
         <mdb-date-picker name="mydate" [placeholder]="'Hạn Thanh toán'" formControlName="DueDate">
           <label for="form2">Hạn thanh toán </label>

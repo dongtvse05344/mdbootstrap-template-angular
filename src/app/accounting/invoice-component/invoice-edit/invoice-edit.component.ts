@@ -105,7 +105,7 @@ export class InvoiceEditComponent implements OnInit {
             Address: new FormControl(invoice.Address, Validators.required),
             Tel: new FormControl(invoice.Tel),
             Fax: new FormControl(invoice.Fax),
-            Mail: new FormControl(invoice.Mail, Validators.required),
+            Mail: new FormControl(invoice.Mail),
             Bank: new FormControl(invoice.Bank),
             BankAccountNumber: new FormControl(invoice.BankAccountNumber),
             PaymentMethod: new FormControl(invoice.PaymentMethod, Validators.required),
@@ -119,7 +119,7 @@ export class InvoiceEditComponent implements OnInit {
             Date: new FormControl(invoice.Date, Validators.required),
             Note: new FormControl(invoice.Note),
             TemplateId: new FormControl(invoice.TemplateId, Validators.required),
-            invoiceItemCMs: this.fb.array([])
+            invoiceItemCMs: this.fb.array([],Validators.required)
         });
         let op = this.form.get('invoiceItemCMs') as FormArray;
         invoice.InvoiceItemCMs.forEach((e: InvoiceItem) => {

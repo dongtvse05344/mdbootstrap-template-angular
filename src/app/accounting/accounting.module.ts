@@ -12,9 +12,12 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { InvoiceEditComponent } from './invoice-component/invoice-edit/invoice-edit.component';
 import {DpDatePickerModule} from 'ng2-date-picker';
 import { AccountPasswordComponent } from './account-component/account-password/account-password.component';
+import {MatChipsModule} from '@angular/material/chips';
+import { MatFormFieldModule, MatIconModule, MatSlideToggleModule, MatAutocompleteModule } from '@angular/material';
+import { CustomerListComponent } from './customer-component/customer-list/customer-list.component';
 
 @NgModule({
-  declarations: [AccountingLayoutComponent, InvoiceCreateComponent, InvoiceListComponent, InvoiceEditComponent, AccountPasswordComponent],
+  declarations: [AccountingLayoutComponent, InvoiceCreateComponent, InvoiceListComponent, InvoiceEditComponent, AccountPasswordComponent, CustomerListComponent],
   imports: [
     CommonModule,
     AccountinRoutingModule,
@@ -23,6 +26,7 @@ import { AccountPasswordComponent } from './account-component/account-password/a
     FormsModule,
     TextMaskModule,
     ReactiveFormsModule,
+    MatChipsModule,MatFormFieldModule,MatIconModule,MatSlideToggleModule, MatAutocompleteModule,
     DpDatePickerModule,
     SweetAlert2Module.forRoot({
       buttonsStyling: false,

@@ -1,0 +1,75 @@
+<!-- Basic example -->
+<div class="row">
+  <div class="col-md-12 mx-auto mt-2">
+      <div class="card card-cascade narrower mt-2">
+          <!--Card image-->
+          <div class="view view-cascade gradient-card-header card-header narrower py-4 mx-4 mb-3 d-flex justify-content-center align-items-center">
+
+              <h4 class="white-text font-weight-bold text-uppercase mb-0">Danh sách Khách hàng</h4>
+
+          </div>
+          <!--/Card image-->
+
+          <div class="px-4">
+              <div class="row table-button-group">
+                  <div class="col-md-6 left">
+                      <nav aria-label="...">
+                          <ul class="pagination">
+                              <li *ngFor="let i of state.pageSizeNumbers" class="page-item"
+                                  [class.active]="state.pageSize==i" (click)="setPageSize(i)"><a
+                                      class="page-link">{{i}}</a></li>
+                          </ul>
+                      </nav>
+                  </div>
+                  <div class="col-md-6 right text-right">
+                      <button [routerLink]="['create']" _ngcontent-c22="" color="success" mdbbtn="" mdbwaveseffect=""
+                              outline="true" type="button" class="btn btn-outline-default"
+                              ng-reflect-color="success" ng-reflect-outline="true">
+                          <i class="fa fa-check"></i>Thêm mới khách hàng
+                      </button>
+                  </div>
+              </div>
+              <table class="table table-hover table-responsive-md mb-0 animated bounceInUp">
+                  <thead>
+                  <tr class="">
+                      <th class="th-lg">Tên đối tác</th>
+                      <th class="th-lg">Mã số thuế</th>
+                      <th class="th-lg">Số điện thoại</th>
+                      <th class="th-lg">Chi tiết</th>
+                  </tr>
+                  </thead>
+                  <!--Table body-->
+                  <tbody *ngIf="data" >
+                  <tr *ngFor="let item of data.List">
+                      <td [routerLink]="['edit',item.Id]"><b>{{item.Enterprise}}</b><br/></td>
+                      <td>{{item.TaxNo }}</td>
+                      <td>{{item.Tel}}</td>
+                      <td>
+                          <button mdbBtn type="button" color="default" [routerLink]="['detail',item.Id]" size="md"
+                                  outline="true" mdbWavesEffect>
+                              <i class="fa fa-pencil"></i>
+                          </button>
+                      </td>
+                  </tr>
+                  </tbody>
+                  <!--Table body-->
+              </table>
+          </div>
+          <hr class="my-0">
+          <!--Bottom Table UI-->
+          <div class="d-flex justify-content-center">
+              <!--Pagination -->
+              <nav class="my-4 pt-2">
+                  <ul class="pagination pagination-circle pg-purple mb-0">
+                      <li class="page-item" [class.active]="i==state.index" *ngFor="let i of state.pageNumbers">
+                          <a class="page-link" (click)="setIndex(i)">{{i}}</a>
+                      </li>
+                  </ul>
+              </nav>
+              <!--/Pagination -->
+          </div>
+          <!--Bottom Table UI-->
+      </div>
+  </div>
+</div>
+<!-- Basic example -->

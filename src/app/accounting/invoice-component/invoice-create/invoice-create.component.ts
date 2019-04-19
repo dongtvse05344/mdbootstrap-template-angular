@@ -1,19 +1,18 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {TemplateService} from 'src/app/manager/services/template.service';
-import {ProductService} from 'src/app/manager/services/product.service';
-import {Template} from 'src/app/manager/models/template';
-import {Product} from 'src/app/manager/models/product';
-import {createNumberMask} from 'text-mask-addons';
-import {InvoiceItem} from '../../models/InvoiceItem';
-import {Invoice} from '../../models/Invoice';
-import {FormGroup, FormBuilder, FormControl, FormArray, Validators} from '@angular/forms';
-import {connectableObservableDescriptor} from 'rxjs/internal/observable/ConnectableObservable';
-import {InvoiceService} from '../../services/invoice.service';
-import {CompanyService} from 'src/app/admin/services/company.service';
-import {Company} from 'src/app/admin/models/company';
-import {SwalComponent} from '@toverux/ngx-sweetalert2';
-import {Router, ActivatedRoute} from '@angular/router';
-import {environment} from '../../../../environments/environment';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { TemplateService } from 'src/app/manager/services/template.service';
+import { ProductService } from 'src/app/manager/services/product.service';
+import { Template } from 'src/app/manager/models/template';
+import { Product } from 'src/app/manager/models/product';
+import { createNumberMask } from 'text-mask-addons';
+import { InvoiceItem } from '../../models/InvoiceItem';
+import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
+import { InvoiceService } from '../../services/invoice.service';
+import { CompanyService } from 'src/app/admin/services/company.service';
+import { Company } from 'src/app/admin/models/company';
+import { SwalComponent } from '@toverux/ngx-sweetalert2';
+import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../../../environments/environment';
+import { MatChipInputEvent, MatAutocomplete, MatAutocompleteSelectedEvent } from '@angular/material';
 
 @Component({
     selector: 'app-invoice-create',
@@ -44,10 +43,10 @@ export class InvoiceCreateComponent implements OnInit {
     templateSelect = [];
     productSelect = [];
     VatSelect = [
-        {value: -1, label: 'Không chịu thuế'},
-        {value: 0, label: '0%'},
-        {value: 5, label: '5%'},
-        {value: 10, label: '10%'},
+        { value: -1, label: 'Không chịu thuế' },
+        { value: 0, label: '0%' },
+        { value: 5, label: '5%' },
+        { value: 10, label: '10%' },
     ];
     enviroment = environment;
 
@@ -84,7 +83,7 @@ export class InvoiceCreateComponent implements OnInit {
             Address: new FormControl('', Validators.required),
             Tel: new FormControl(''),
             Fax: new FormControl(''),
-            Email: new FormControl(''),
+            Email: new FormControl(),
             Bank: new FormControl(''),
             BankAccountNumber: new FormControl(''),
             PaymentMethod: new FormControl(environment.typeOfPayments[0].value, Validators.required),
@@ -99,7 +98,7 @@ export class InvoiceCreateComponent implements OnInit {
             Note: new FormControl(''),
             TemplateId: new FormControl('', Validators.required),
             Type: new FormControl(0),
-            invoiceItemCMs: this.fb.array([],Validators.required)
+            invoiceItemCMs: this.fb.array([], Validators.required)
         });
     }
 
@@ -143,10 +142,11 @@ export class InvoiceCreateComponent implements OnInit {
                     this.form.patchValue({
                         Fax: response.Fax
                     });
-                    
                     this.form.patchValue({
                         Email: response.Email
                     })
+
+                    this.fruits = response.Email
 
                 }
             );
@@ -200,9 +200,12 @@ export class InvoiceCreateComponent implements OnInit {
         op.removeAt(item);
         this.updateAmount();
     }
- 
+
     create() {
-        console.log(this.form);
+        this.form.patchValue({
+            Email: this.fruits
+        });
+        console.log(this.form.value);
         if (this.form.valid) {
             this.invoiceService.createInvoice(this.form.value)
                 .then(
@@ -222,7 +225,48 @@ export class InvoiceCreateComponent implements OnInit {
     }
 
     goHome() {
-        this.router.navigate(['..'], {relativeTo: this.route});
+        this.router.navigate(['..'], { relativeTo: this.route });
     }
 
+    @ViewChild('auto') matAutocomplete: MatAutocomplete;
+    @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
+    add(event: MatChipInputEvent): void {
+        // Add fruit only when MatAutocomplete is not open
+        // To make sure this does not conflict with OptionSelected Event
+        if (!this.matAutocomplete.isOpen) {
+            const input = event.input;
+            const value = event.value;
+
+            // Add our fruit
+            if ((value || '').trim()) {
+                this.fruits.push(value.trim());
+            }
+
+            // Reset the input value
+            if (input) {
+                input.value = '';
+            }
+        }
+    }
+
+    remove(fruit: string): void {
+        const index = this.fruits.indexOf(fruit);
+
+        if (index >= 0) {
+            this.fruits.splice(index, 1);
+        }
+    }
+
+    selected(event: MatAutocompleteSelectedEvent): void {
+        this.fruits.push(event.option.viewValue);
+        this.fruitInput.nativeElement.value = '';
+    }
+
+
+
+    visible = true;
+    selectable = true;
+    removable = true;
+    addOnBlur = true;
+    fruits: string[] = [];
 }

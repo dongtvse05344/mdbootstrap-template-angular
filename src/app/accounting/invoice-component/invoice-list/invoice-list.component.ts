@@ -1,8 +1,8 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {InvoiceService} from '../../services/invoice.service';
-import {PageModel} from 'src/app/core/models/PageModel';
-import {Invoice} from '../../models/Invoice';
-import {SwalComponent} from '@toverux/ngx-sweetalert2';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { InvoiceService } from '../../services/invoice.service';
+import { PageModel } from 'src/app/core/models/PageModel';
+import { Invoice } from '../../models/Invoice';
+import { SwalComponent } from '@toverux/ngx-sweetalert2';
 import swal from 'sweetalert2';
 
 @Component({
@@ -82,7 +82,7 @@ export class InvoiceListComponent implements OnInit {
         this.PDFsrc = null;
         this.invoiceService.getInvoicePDF(invoice.Id)
             .subscribe(res => {
-                const file = new Blob([res], {type: 'application/pdf'});
+                const file = new Blob([res], { type: 'application/pdf' });
                 const fileURL = URL.createObjectURL(file);
                 this.PDFsrc = fileURL;
                 this.basicModal.show();

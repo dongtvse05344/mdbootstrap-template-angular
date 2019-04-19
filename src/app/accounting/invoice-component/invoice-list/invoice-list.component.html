@@ -91,13 +91,13 @@
                                 <i class="fa fa-pencil"></i>
                             </button>
                         </td>
-                        <td class="text-center" *ngIf="item.Type==0">
+                        <!-- <td class="text-center" *ngIf="item.Type==0">
                             <button class="btn-md" (click)="approveInvoice(item.Id)" mdbBtn type="button" color="light"
                                     rounded="true"
                                     outline="true" mdbWavesEffect>
                                 <i class="fa fa-thumbs-up"></i>
                             </button>
-                        </td>
+                        </td> -->
                         <td *ngIf="item.Type==0">
                             <button class="btn-md"
                                     [swal]="{ title: 'Xóa sản phẩm', text: 'Hành động này không thể hoàn tác' ,type :'warning',showCancelButton : 'true' }"

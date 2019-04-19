@@ -7,7 +7,7 @@ export const environment = {
     token: 'HiEIS_TOKEN',
     roles: 'HiEIS_ROLES',
     endPoint: 'http://dongtv.hisoft.vn/',
-    // endPoint: 'https://localhost:44326/',
+    // endPoint: 'https://localhost:44370/',
 
     RoleName: {
         Admin: 'Admin',
@@ -42,6 +42,8 @@ export const environment = {
             label: 'Chuyển khoản'
         },
     ],
+    
+    
     apiPaths: {
         auth: {
             login: 'api/Auth/token',
@@ -82,7 +84,7 @@ export const environment = {
             main: '/api/CurrentSign',
             code: '/GenerateCode',
             recode: '/RegenerateCode',
-        }
+        },
     },
 
 };
